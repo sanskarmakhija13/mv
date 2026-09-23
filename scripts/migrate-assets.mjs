@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
+const MIGRATION_PROXY = "https://mv-54fza3qo4-mv-5165.vercel.app/api/legacy-media";
 
 const assets = [
   ["https://www.iiml-manfestvarchasva.com/images/slider/DSC_7072.jpeg", "public/headliners/salim-sulaiman.jpeg"],
@@ -64,7 +65,9 @@ async function download(url, destination) {
 }
 
 for (const [url, destination] of assets) {
-  await download(url, destination);
+  const legacyPath = new URL(url).pathname;
+  const proxyUrl = `${MIGRATION_PROXY}?path=${encodeURIComponent(legacyPath)}`;
+  await download(proxyUrl, destination);
 }
 
 let content = await fs.readFile(path.join(root, "lib/content.ts"), "utf8");
@@ -159,7 +162,9 @@ const legacyHits = [];
 for (const file of await walk(root)) {
   if (!textExtensions.has(path.extname(file))) continue;
   const text = await fs.readFile(file, "utf8");
-  if (text.includes("iiml-manfestvarchasva.com")) legacyHits.push(path.relative(root, file));
+  const relative = path.relative(root, file);
+  if (["scripts/migrate-assets.mjs", "app/api/legacy-media/route.ts", ".github/workflows/migrate-assets.yml"].includes(relative)) continue;
+  if (text.includes("iiml-manfestvarchasva.com")) legacyHits.push(relative);
 }
 if (legacyHits.length) throw new Error(`Legacy domain remains in: ${legacyHits.join(", ")}`);
 

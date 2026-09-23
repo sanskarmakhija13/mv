@@ -9,6 +9,7 @@ import {
   stats,
 } from "@/lib/content";
 import { SectionTitle } from "@/components/SectionTitle";
+import { Countdown } from "@/components/Countdown";
 
 export function Hero() {
   return (
@@ -26,13 +27,15 @@ export function Hero() {
         <h1>
           MANFEST-<span>VARCHASVA</span>
         </h1>
-        <div className="hero-year">2026</div>
+        <div className="hero-year">{site.edition}</div>
 
         <div className="hero-info">
           <span>{site.dates}</span>
           <i />
           <span>{site.venue}</span>
         </div>
+
+        <Countdown />
 
         <p>{site.tagline}</p>
 

@@ -191,7 +191,6 @@ export type EventItem = {
   blurb: string;
   details?: string[];
   prize?: string;
-  legacyUrl?: string;
 };
 
 export const events: EventItem[] = [

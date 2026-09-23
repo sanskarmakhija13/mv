@@ -13,47 +13,62 @@ export const site = {
 
 export const headliners = [
   {
+    name: "Seedhe Maut",
+    edition: "MV 2025–26",
+    image: "/headliners/seedhe-maut.webp",
+  },
+  {
+    name: "Papon",
+    edition: "MV 2025–26",
+    image: "/headliners/papon.webp",
+  },
+  {
+    name: "Bismil",
+    edition: "MV 2025–26",
+    image: "/headliners/bismil.webp",
+  },
+  {
     name: "Salim–Sulaiman",
-    edition: "#MV'25",
+    edition: "MV 2024–25",
     image:
       "https://www.iiml-manfestvarchasva.com/images/slider/DSC_7072.jpeg",
   },
   {
     name: "Jubin Nautiyal",
-    edition: "#MV'24",
+    edition: "MV 2023–24",
     image:
       "https://www.iiml-manfestvarchasva.com/images/slider/JNautiyalSlider_C.jpeg",
   },
   {
     name: "Amit Trivedi",
-    edition: "#MV'23",
+    edition: "MV 2022–23",
     image:
       "https://www.iiml-manfestvarchasva.com/images/slider/Amit-Trivedi-Slider_C.jpg",
   },
   {
     name: "Javed Ali",
-    edition: "#MV'22",
+    edition: "MV 2021–22",
     image:
       "https://www.iiml-manfestvarchasva.com/images/partners/2021-22/5D4_7133_C.jpeg",
   },
   {
     name: "KK",
-    edition: "#MV2020-21",
+    edition: "MV 2020–21",
     image: "https://www.iiml-manfestvarchasva.com/images/slidekk.jpeg",
   },
   {
     name: "Guru Randhawa",
-    edition: "#MV2019",
+    edition: "MV 2019–20",
     image:
       "https://www.iiml-manfestvarchasva.com/images/slider/GR2_C.jpeg",
   },
   {
     name: "Vishal & Shekhar",
-    edition: "#MV2018",
+    edition: "MV 2018–19",
     image:
       "https://www.iiml-manfestvarchasva.com/images/slider/VishalShekhar_C.jpeg",
   },
-];
+]
 
 export const leaders = [
   {

@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   },
   description:
     "Manfest-Varchasva, IIM Lucknow's annual business, cultural and sports festival.",
+  icons: {
+    icon: "/mv-logo.svg",
+    shortcut: "/mv-logo.svg",
+    apple: "/mv-logo.svg",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {

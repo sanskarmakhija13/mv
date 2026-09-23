@@ -22,9 +22,6 @@ jobs:
         with:
           node-version: 22
 
-      - name: Verify media tools
-        run: ffmpeg -version | head -n 1
-
       - name: Download and localize legacy media
         run: node scripts/migrate-assets.mjs
 

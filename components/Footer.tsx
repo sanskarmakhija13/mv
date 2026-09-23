@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/content";
 
@@ -6,7 +7,7 @@ export function Footer() {
     <footer className="site-footer">
       <div className="footer-grid page-shell">
         <div>
-          <div className="footer-brand">MANFEST-VARCHASVA</div>
+          <div className="footer-brand"><Image className="footer-logo" src="/mv-logo.svg" alt="Manfest Varchasva" width={92} height={92} /><span>MANFEST-VARCHASVA</span></div>
           <p>
             IIM Lucknow&apos;s annual business, cultural and sports festival.
           </p>

@@ -149,6 +149,72 @@ button, input, textarea, select { font: inherit; }
   text-transform: uppercase;
 }
 .hero-info i { display: block; width: 1px; height: 24px; background: rgba(255,255,255,0.25); }
+
+.countdown-wrap {
+  width: min(720px, 100%);
+  margin: 18px auto 0;
+  padding: 14px 18px 16px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 18px;
+  background: rgba(8, 8, 20, 0.48);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 14px 45px rgba(0,0,0,0.2);
+}
+.countdown-label {
+  margin-bottom: 11px;
+  color: rgba(255,255,255,0.62);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 3.4px;
+}
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.countdown-unit {
+  position: relative;
+  min-width: 0;
+  padding: 2px 14px;
+}
+.countdown-unit + .countdown-unit::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8%;
+  width: 1px;
+  height: 84%;
+  background: rgba(255,255,255,0.13);
+}
+.countdown-unit strong {
+  display: block;
+  font-size: clamp(22px, 2.6vw, 35px);
+  line-height: 1;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg, #fff, #d87aff 70%, #ff6880);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.countdown-unit span {
+  display: block;
+  margin-top: 6px;
+  color: rgba(255,255,255,0.68);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+.countdown-live {
+  width: fit-content;
+  margin: 18px auto 0;
+  padding: 13px 20px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 999px;
+  background: rgba(8,8,20,0.55);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
 .hero-content > p { margin: 19px 0 0; color: rgba(255,255,255,0.78); font-size: 17px; letter-spacing: 2px; }
 .hero-actions { display: flex; justify-content: center; gap: 14px; margin-top: 30px; }
 
@@ -352,6 +418,9 @@ button, input, textarea, select { font: inherit; }
   .hero-info { flex-direction: column; gap: 8px; padding: 13px 20px; }
   .hero-info i { display: none; }
   .hero-content > p { font-size: 14px; line-height: 1.5; letter-spacing: 1px; }
+  .countdown-wrap { width: min(100%, 560px); padding: 12px 10px 14px; }
+  .countdown-unit { padding: 2px 6px; }
+  .countdown-label { letter-spacing: 2.4px; }
   .hero-actions { flex-direction: column; align-items: center; }
   .btn { width: min(100%, 310px); }
 
@@ -390,6 +459,11 @@ button, input, textarea, select { font: inherit; }
   .hero-kicker::before, .hero-kicker::after { width: 28px; }
   .hero h1 { font-size: clamp(42px, 15vw, 66px); }
   .hero-year { font-size: clamp(78px, 28vw, 120px); }
+  .countdown-wrap { margin-top: 14px; padding: 11px 6px 12px; border-radius: 14px; }
+  .countdown-label { margin-bottom: 9px; font-size: 8px; letter-spacing: 1.8px; }
+  .countdown-unit { padding: 2px 3px; }
+  .countdown-unit strong { font-size: 22px; }
+  .countdown-unit span { margin-top: 4px; font-size: 6.5px; letter-spacing: 0.9px; }
   .section-title h2 { font-size: 42px; }
   .leaders-grid, .event-grid { grid-template-columns: 1fr; }
   .speaker-card { display: grid; grid-template-columns: 115px 1fr; }

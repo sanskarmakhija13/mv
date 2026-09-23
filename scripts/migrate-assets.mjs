@@ -1,6 +1,5 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { execFileSync } from "node:child_process";
 
 const root = process.cwd();
 
@@ -68,24 +67,9 @@ for (const [url, destination] of assets) {
   await download(url, destination);
 }
 
-// Re-encode the three newly uploaded 2025–26 headliner images as JPEG.
-// This also validates that the existing WebP blobs are decodable.
-const currentHeadliners = ["seedhe-maut", "papon", "bismil"];
-for (const slug of currentHeadliners) {
-  const input = path.join(root, "public", "headliners", `${slug}.webp`);
-  const output = path.join(root, "public", "headliners", `${slug}.jpg`);
-  execFileSync("ffmpeg", ["-y", "-loglevel", "error", "-i", input, "-q:v", "2", output], { stdio: "inherit" });
-  const stat = await fs.stat(output);
-  if (stat.size < 1000) throw new Error(`Re-encoded ${slug}.jpg is unexpectedly small`);
-  console.log(`Re-encoded ${slug}.jpg (${stat.size} bytes)`);
-}
-
 let content = await fs.readFile(path.join(root, "lib/content.ts"), "utf8");
 
 const replacements = new Map([
-  ['"/headliners/seedhe-maut.webp"', '"/headliners/seedhe-maut.jpg"'],
-  ['"/headliners/papon.webp"', '"/headliners/papon.jpg"'],
-  ['"/headliners/bismil.webp"', '"/headliners/bismil.jpg"'],
 
   ['"https://www.iiml-manfestvarchasva.com/images/slider/DSC_7072.jpeg"', '"/headliners/salim-sulaiman.jpeg"'],
   ['"https://www.iiml-manfestvarchasva.com/images/slider/JNautiyalSlider_C.jpeg"', '"/headliners/jubin-nautiyal.jpeg"'],

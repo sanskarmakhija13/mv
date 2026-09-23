@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const links = [
@@ -15,7 +16,7 @@ export function Header() {
     <header className="site-header">
       <div className="nav-shell">
         <Link href="/" className="brand" aria-label="Manfest Varchasva home">
-          <span className="brand-mark">MV</span>
+          <Image className="brand-logo" src="/mv-logo.svg" alt="" width={52} height={52} priority />
           <span className="brand-copy">
             <strong>MANFEST</strong>
             <strong>VARCHASVA</strong>

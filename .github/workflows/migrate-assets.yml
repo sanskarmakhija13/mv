@@ -1,0 +1,45 @@
+name: Migrate Legacy Media
+
+on:
+  push:
+    paths:
+      - ".github/workflows/migrate-assets.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Verify media tools
+        run: ffmpeg -version | head -n 1
+
+      - name: Download and localize legacy media
+        run: node scripts/migrate-assets.mjs
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Verify production build
+        run: npm run build
+
+      - name: Commit migrated assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public lib/content.ts next.config.ts app/events/'[slug]'/page.tsx README.md scripts/README.md
+          git status --short
+          git commit -m "Migrate legacy Joomla media into repository"
+          git push origin HEAD:main

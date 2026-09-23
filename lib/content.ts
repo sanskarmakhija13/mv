@@ -1,8 +1,8 @@
 export const site = {
   name: "Manfest-Varchasva",
   shortName: "MV",
-  edition: "2026",
-  dates: "6–8 February 2026",
+  edition: "2027",
+  dates: "5–7 February 2027",
   venue: "IIM Lucknow",
   tagline: "Where ideas, culture and energy collide.",
   email: "manfest-varchasva@iiml.ac.in",

@@ -43,11 +43,6 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
 
           <aside className="detail-aside">
             <Link className="btn btn-primary" href="/events">All events</Link>
-            {event.legacyUrl ? (
-              <a className="btn btn-ghost" href={event.legacyUrl} target="_blank" rel="noreferrer">
-                View legacy page
-              </a>
-            ) : null}
           </aside>
         </div>
       </section>

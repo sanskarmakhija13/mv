@@ -63,11 +63,9 @@ This includes:
 - events
 - gallery images
 
-## Image migration note
+## Media assets
 
-The first version intentionally references image assets from the existing Joomla site so the visual migration can happen quickly without losing the current media library.
-
-Before the old Joomla site is retired, copy the required images into `public/media/` and change the URLs in `lib/content.ts` to local paths. This prevents broken images after the legacy host is switched off.
+All production images and logos used by the site are stored locally under `public/`. The Next.js site does not depend on the legacy Joomla website for media.
 
 ## Suggested migration path
 

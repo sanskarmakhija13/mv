@@ -8,7 +8,7 @@ export const site = {
   email: "manfest-varchasva@iiml.ac.in",
   address: "IIM Lucknow, Prabandh Nagar, Lucknow 226013",
   heroImage:
-    "https://www.iiml-manfestvarchasva.com/images/slider/DSC_7072.jpeg",
+    "/headliners/salim-sulaiman.jpeg",
 };
 
 export const headliners = [
@@ -31,42 +31,42 @@ export const headliners = [
     name: "Salim–Sulaiman",
     edition: "MV 2024–25",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/slider/DSC_7072.jpeg",
+      "/headliners/salim-sulaiman.jpeg",
   },
   {
     name: "Jubin Nautiyal",
     edition: "MV 2023–24",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/slider/JNautiyalSlider_C.jpeg",
+      "/headliners/jubin-nautiyal.jpeg",
   },
   {
     name: "Amit Trivedi",
     edition: "MV 2022–23",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/slider/Amit-Trivedi-Slider_C.jpg",
+      "/headliners/amit-trivedi.jpg",
   },
   {
     name: "Javed Ali",
     edition: "MV 2021–22",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/partners/2021-22/5D4_7133_C.jpeg",
+      "/headliners/javed-ali.jpeg",
   },
   {
     name: "KK",
     edition: "MV 2020–21",
-    image: "https://www.iiml-manfestvarchasva.com/images/slidekk.jpeg",
+    image: "/headliners/kk.jpeg",
   },
   {
     name: "Guru Randhawa",
     edition: "MV 2019–20",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/slider/GR2_C.jpeg",
+      "/headliners/guru-randhawa.jpeg",
   },
   {
     name: "Vishal & Shekhar",
     edition: "MV 2018–19",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/slider/VishalShekhar_C.jpeg",
+      "/headliners/vishal-shekhar.jpeg",
   },
 ]
 
@@ -75,31 +75,31 @@ export const leaders = [
     name: "Justice D.Y. Chandrachud",
     role: "50th Chief Justice of India",
     image:
-      "https://iiml-manfestvarchasva.com/images/bagallery/gallery-8/thumbnail/category-1/dy-chandrachud.jpg",
+      "/leaders/dy-chandrachud.jpg",
   },
   {
     name: "Deepali Naair",
     role: "Group CMO, CK Birla Group",
     image:
-      "https://iiml-manfestvarchasva.com/images/bagallery/gallery-8/thumbnail/category-1/1-deepali-naair--group-cmo--ck-birla-group.jpg",
+      "/leaders/deepali-naair.jpg",
   },
   {
     name: "Gurpreet Chhatwal",
     role: "CEO, CRISIL Ltd.",
     image:
-      "https://iiml-manfestvarchasva.com/images/bagallery/gallery-8/thumbnail/category-1/gurpreet-chatwani-jpg.jpg",
+      "/leaders/gurpreet-chhatwal.jpg",
   },
   {
     name: "Riya Upreti",
     role: "Founder & CEO, FOBET",
     image:
-      "https://iiml-manfestvarchasva.com/images/bagallery/gallery-8/thumbnail/category-1/riya-upreti.jpg",
+      "/leaders/riya-upreti.jpg",
   },
   {
     name: "Shivam Shahi",
     role: "Co-Founder & COO, Blue Tokai Coffee Roasters",
     image:
-      "https://iiml-manfestvarchasva.com/images/bagallery/gallery-8/thumbnail/category-1/shivam-shahi.jpg",
+      "/leaders/shivam-shahi.jpg",
   },
 ];
 
@@ -115,72 +115,72 @@ export const partnerLogos = [
   {
     name: "Axis Bank",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/partners/2024/AXIS-BANK.png",
+      "/partners/axis-bank.png",
   },
   {
     name: "Alpha 8",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/partners/2024/Alpha-8-logo.png",
+      "/partners/alpha-8.png",
   },
   {
     name: "Bonn",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/partners/2024/Bonn-Logo-with-tagline-1.png",
+      "/partners/bonn.png",
   },
   {
     name: "Decathlon",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/partners/2024/DECATHLON.png",
+      "/partners/decathlon.png",
   },
   {
     name: "Devyani International",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/partners/2024/DEVYANI-INTL.png",
+      "/partners/devyani-international.png",
   },
   {
     name: "Mahindra Solarize",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/partners/2024/mahindra-solarize-logo.png",
+      "/partners/mahindra-solarize.png",
   },
   {
     name: "IDFC FIRST Bank",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/partners/2024/IDFC-FIRST-Bank-logo.png",
+      "/partners/idfc-first-bank.png",
   },
   {
     name: "SBI",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/partners/2024/SBI.png",
+      "/partners/sbi.png",
   },
   {
     name: "LIC",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/partners/2024/lic.png",
+      "/partners/lic.png",
   },
   {
     name: "Plum",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/partners/2024/plum-bodylovin.png",
+      "/partners/plum.png",
   },
   {
     name: "Safexpress",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/partners/2024/safeexpress-MAIN.png",
+      "/partners/safexpress.png",
   },
   {
     name: "Sparx",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/partners/2024/sparx.png",
+      "/partners/sparx.png",
   },
   {
     name: "UPSRTC",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/partners/2024/UPSRTC.png",
+      "/partners/upsrtc.png",
   },
   {
     name: "UPSDM",
     image:
-      "https://www.iiml-manfestvarchasva.com/images/partners/2025/UPSDM.png",
+      "/partners/upsdm.png",
   },
 ];
 
@@ -200,8 +200,6 @@ export const events: EventItem[] = [
     name: "Vibes",
     category: "Dance",
     blurb: "A dance event from the cultural line-up.",
-    legacyUrl:
-      "https://iiml-manfestvarchasva.com/index.php/events/cultural-events/dance/vibes",
   },
   {
     slug: "imperio",
@@ -216,16 +214,12 @@ export const events: EventItem[] = [
       "Final round at IIM Lucknow",
     ],
     prize: "₹20,000 first place · ₹13,000 runners-up",
-    legacyUrl:
-      "https://iiml-manfestvarchasva.com/index.php/events/cultural-events/dance/imperio",
   },
   {
     slug: "duex-danza",
     name: "Duex Danza",
     category: "Dance",
     blurb: "A cultural dance event from Manfest-Varchasva.",
-    legacyUrl:
-      "https://iiml-manfestvarchasva.com/index.php/events/cultural-events/dance/duex-danza",
   },
   {
     slug: "taal",

@@ -1,3 +1,3 @@
 # Scripts
 
-A future migration script can be added here to mirror images from the Joomla server into `/public/media` before the legacy site is retired.
+`migrate-assets.mjs` was used for the one-time migration of legacy Joomla media into the Next.js repository. Production rendering uses only local files under `public/`.

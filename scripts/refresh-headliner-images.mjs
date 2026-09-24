@@ -1,18 +1,33 @@
 import fs from "node:fs/promises";
+import { createHash } from "node:crypto";
 import path from "node:path";
 
 const root = process.cwd();
 
+function commonsOriginal(filename) {
+  const normalized = filename.replaceAll(" ", "_");
+  const md5 = createHash("md5").update(normalized).digest("hex");
+  return `https://upload.wikimedia.org/wikipedia/commons/${md5[0]}/${md5.slice(0,2)}/${encodeURIComponent(normalized)}`;
+}
+
+function commonsThumb(filename, width) {
+  const normalized = filename.replaceAll(" ", "_");
+  const md5 = createHash("md5").update(normalized).digest("hex");
+  const encoded = encodeURIComponent(normalized);
+  return `https://upload.wikimedia.org/wikipedia/commons/thumb/${md5[0]}/${md5.slice(0,2)}/${encoded}/${width}px-${encoded}`;
+}
+
+
 const assets = [
-  ["https://commons.wikimedia.org/wiki/Special:Redirect/file/Papon%20Euphuism.jpg", "public/headliners/papon.jpg"],
+  [commonsThumb("Papon Euphuism.jpg", 1600), "public/headliners/papon.jpg"],
   ["https://cdn.starclinch.in/artist/bismil/Pune_never_fails_to_impress_me_with_their_verve.1.6.25_.......bismil_bismilkimehf_FaSaDKi.jpg?flop=false&format=webp&quality=90&width=1920", "public/headliners/bismil.jpg"],
-  ["https://commons.wikimedia.org/wiki/Special:Redirect/file/Salim-Sulaiman%20Vitopia.jpg", "public/headliners/salim-sulaiman.jpeg"],
-  ["https://commons.wikimedia.org/wiki/Special:Redirect/file/Jubin%20Nauityal%20at%20the%20Good%20Homes%20Awards%202015.jpg", "public/headliners/jubin-nautiyal.jpeg"],
-  ["https://commons.wikimedia.org/wiki/Special:Redirect/file/Amit%20Trivedi%20Live%20%28OT%29%20%28cropped%29.jpg", "public/headliners/amit-trivedi.jpg"],
-  ["https://commons.wikimedia.org/wiki/Special:Redirect/file/Javed%20Ali%20Youthopia%202016.jpg", "public/headliners/javed-ali.jpeg"],
-  ["https://commons.wikimedia.org/wiki/Special:Redirect/file/KK%20%28125%29.jpg", "public/headliners/kk.jpeg"],
-  ["https://commons.wikimedia.org/wiki/Special:Redirect/file/Guru%20Randhawa%20at%20the%20launch%20of%20MTV%20Unplugged%20Season%208.jpg", "public/headliners/guru-randhawa.jpeg"],
-  ["https://commons.wikimedia.org/wiki/Special:Redirect/file/Vishal-Shekhar%20Indian%20Idol%20Junior%20press%20conference.jpg", "public/headliners/vishal-shekhar.jpeg"],
+  [commonsOriginal("Salim-Sulaiman Vitopia.jpg"), "public/headliners/salim-sulaiman.jpeg"],
+  [commonsOriginal("Jubin Nauityal at the Good Homes Awards 2015.jpg"), "public/headliners/jubin-nautiyal.jpeg"],
+  [commonsOriginal("Amit Trivedi Live (OT) (cropped).jpg"), "public/headliners/amit-trivedi.jpg"],
+  [commonsOriginal("Javed Ali Youthopia 2016.jpg"), "public/headliners/javed-ali.jpeg"],
+  [commonsThumb("KK (125).jpg", 1200), "public/headliners/kk.jpeg"],
+  [commonsOriginal("Guru Randhawa at the launch of MTV Unplugged Season 8.jpg"), "public/headliners/guru-randhawa.jpeg"],
+  [commonsOriginal("Vishal-Shekhar Indian Idol Junior press conference.jpg"), "public/headliners/vishal-shekhar.jpeg"],
 ];
 
 function isImage(bytes) {
@@ -54,4 +69,7 @@ async function download(url, destination) {
   throw lastError;
 }
 
-for (const [url, dest] of assets) await download(url, dest);
+for (const [url, dest] of assets) {
+  await download(url, dest);
+  await new Promise(r => setTimeout(r, 500));
+}

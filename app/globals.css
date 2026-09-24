@@ -267,9 +267,36 @@ button, input, textarea, select { font: inherit; }
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   overscroll-behavior-inline: contain;
-  padding-bottom: 10px;
+  padding-bottom: 14px;
   scrollbar-width: thin;
+  scrollbar-color: #c75cff rgba(255,255,255,0.06);
   -webkit-overflow-scrolling: touch;
+}
+
+.headliner-grid::-webkit-scrollbar {
+  height: 7px;
+}
+
+.headliner-grid::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+  border-radius: 999px;
+  margin-inline: 10px;
+}
+
+.headliner-grid::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #a85cff, #e05cff 52%, #ff5b82);
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.headliner-grid::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #bb71ff, #ea70ff 52%, #ff6e90);
+}
+
+.headliner-grid::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none;
 }
 .headliner-card {
   position: relative;

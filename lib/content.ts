@@ -16,7 +16,7 @@ export const headliners = [
     name: "Seedhe Maut",
     edition: "MV 2025–26",
     image: "/headliners/seedhe-maut-original.jpg",
-    focus: "50% 58%",
+    focus: "50% 50%",
   },
   {
     name: "Papon",

@@ -10,6 +10,7 @@ import {
 } from "@/lib/content";
 import { SectionTitle } from "@/components/SectionTitle";
 import { Countdown } from "@/components/Countdown";
+import { HorizontalScroller } from "@/components/HorizontalScroller";
 
 export function Hero() {
   return (
@@ -67,7 +68,12 @@ export function Headliners() {
           description="Artists who turned Manfest-Varchasva nights into memories."
         />
 
-        <div className="headliner-grid">
+        <div className="headliner-scroll-meta" aria-hidden="true">
+          <span>Drag to explore</span>
+          <b>→</b>
+        </div>
+
+        <HorizontalScroller className="headliner-grid">
           {headliners.map((artist, index) => (
             <article className="headliner-card" key={artist.name}>
               <img
@@ -84,7 +90,7 @@ export function Headliners() {
               </div>
             </article>
           ))}
-        </div>
+        </HorizontalScroller>
       </div>
     </section>
   );

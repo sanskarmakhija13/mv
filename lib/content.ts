@@ -52,7 +52,7 @@ export const headliners = [
     name: "Javed Ali",
     edition: "MV 2021–22",
     image:
-      "/headliners/javed-ali.jpeg",
+      "/headliners/javed-ali-final.jpeg",
     focus: "50% 50%",
   },
   {

@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - ".github/workflows/refresh-headliners.yml"
+      - "scripts/refresh-headliner-images.mjs"
 
 permissions:
   contents: write

@@ -30,10 +30,8 @@ export function Hero() {
         </h1>
         <div className="hero-year">{site.edition}</div>
 
-        <div className="hero-info">
+        <div className="hero-info hero-info-date">
           <span>{site.dates}</span>
-          <i />
-          <span>{site.venue}</span>
         </div>
 
         <Countdown />

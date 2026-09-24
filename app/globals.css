@@ -102,13 +102,25 @@ button, input, textarea, select { font: inherit; }
 .hero-kicker {
   display: inline-flex;
   align-items: center;
-  gap: 20px;
+  gap: 22px;
   margin-bottom: 24px;
-  font-size: 13px;
-  letter-spacing: 8px;
-  color: rgba(255,255,255,0.85);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 9px;
+  color: #fff;
+  text-shadow:
+    0 0 18px rgba(255,255,255,0.16),
+    0 0 28px rgba(192,104,255,0.16);
 }
-.hero-kicker::before, .hero-kicker::after { content: ""; width: 58px; height: 1px; background: linear-gradient(90deg, var(--purple), var(--red)); }
+.hero-kicker::before,
+.hero-kicker::after {
+  content: "";
+  width: 72px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #9c64ff, #ec4db5 55%, #ff5368);
+  box-shadow: 0 0 14px rgba(208,86,220,0.22);
+}
 .hero h1 {
   margin: 0;
   font-size: clamp(46px, 7vw, 104px);
@@ -171,6 +183,11 @@ button, input, textarea, select { font: inherit; }
   width: 1px;
   height: 26px;
   background: linear-gradient(180deg, transparent, rgba(220,166,255,0.58), transparent);
+}
+.hero-info-date {
+  padding-inline: 30px;
+  justify-content: center;
+  letter-spacing: 2.8px;
 }
 
 .countdown-wrap {
@@ -593,8 +610,8 @@ button, input, textarea, select { font: inherit; }
   .brand-logo { width: 46px; height: 46px; }
   .footer-brand { align-items: flex-start; }
   .footer-logo { width: 64px; height: 64px; }
-  .hero-kicker { font-size: 10px; letter-spacing: 4px; gap: 10px; }
-  .hero-kicker::before, .hero-kicker::after { width: 28px; }
+  .hero-kicker { font-size: 11px; letter-spacing: 5px; gap: 11px; }
+  .hero-kicker::before, .hero-kicker::after { width: 34px; height: 1.5px; }
   .hero h1 { font-size: clamp(42px, 15vw, 66px); }
   .hero-year { font-size: clamp(78px, 28vw, 120px); }
   .countdown-wrap { margin-top: 14px; padding: 11px 6px 12px; border-radius: 14px; }

@@ -68,15 +68,14 @@ export function Headliners() {
         />
 
         <div className="headliner-grid">
-          {headliners.map((artist) => (
+          {headliners.map((artist, index) => (
             <article className="headliner-card" key={artist.name}>
               <img
                 src={artist.image}
                 alt={artist.name}
-                className="headliner-photo"
+                className={`headliner-photo${index < 3 ? " final-crop" : ""}`}
                 loading="lazy"
                 decoding="async"
-                style={{ objectPosition: artist.focus }}
               />
               <div className="card-gradient" />
               <div className="headliner-copy">

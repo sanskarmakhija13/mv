@@ -158,132 +158,130 @@ button, input, textarea, select { font: inherit; }
   position: relative;
   width: fit-content;
   max-width: 100%;
-  margin: 22px auto 0;
-  padding: 16px 24px;
+  margin: 24px auto 0;
   display: flex;
   align-items: center;
-  gap: 24px;
-  border: 1px solid rgba(255,255,255,0.17);
-  border-radius: 16px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.015)),
-    rgba(9, 10, 24, 0.62);
-  backdrop-filter: blur(18px) saturate(120%);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.08),
-    0 14px 38px rgba(0,0,0,0.22);
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 2.4px;
+  justify-content: center;
   text-transform: uppercase;
 }
-.hero-info::before {
+
+.hero-info-date {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 3.4px;
+  color: #fff;
+  text-shadow:
+    0 2px 12px rgba(0,0,0,0.95),
+    0 0 22px rgba(0,0,0,0.58);
+}
+
+.hero-info-date::before {
   content: "";
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(110deg, rgba(185,112,255,0.32), transparent 38%, rgba(255,89,128,0.25));
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
+  left: 50%;
+  right: auto;
+  top: auto;
+  bottom: -13px;
+  width: 132px;
+  height: 2px;
+  padding: 0;
+  border-radius: 999px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, #b966ff 20%, #ef57bd 55%, #ff6278 80%, transparent);
+  -webkit-mask: none;
+  mask: none;
+  opacity: 0.95;
+  box-shadow: 0 0 14px rgba(218,91,226,0.25);
   pointer-events: none;
 }
+
 .hero-info i {
-  display: block;
-  width: 1px;
-  height: 26px;
-  background: linear-gradient(180deg, transparent, rgba(220,166,255,0.58), transparent);
-}
-.hero-info-date {
-  padding: 19px 36px;
-  justify-content: center;
-  font-size: 17px;
-  font-weight: 900;
-  letter-spacing: 3.1px;
-  min-width: 320px;
+  display: none;
 }
 
 .countdown-wrap {
   position: relative;
-  width: min(720px, 100%);
-  margin: 18px auto 0;
-  padding: 18px 20px 19px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.13);
-  border-radius: 20px;
-  background:
-    radial-gradient(circle at 12% 0%, rgba(157,100,255,0.11), transparent 30%),
-    radial-gradient(circle at 88% 100%, rgba(255,83,104,0.09), transparent 32%),
-    rgba(8, 8, 20, 0.56);
-  backdrop-filter: blur(18px) saturate(115%);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.06),
-    0 18px 48px rgba(0,0,0,0.24);
+  width: min(760px, 100%);
+  margin: 31px auto 0;
+  padding: 4px 0 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
 }
+
 .countdown-wrap::before {
-  content: "";
-  position: absolute;
-  left: 10%;
-  right: 10%;
-  top: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(210,130,255,0.7), rgba(255,92,129,0.55), transparent);
-  opacity: 0.85;
+  content: none;
 }
+
 .countdown-label {
-  margin-bottom: 14px;
-  color: rgba(255,255,255,0.48);
-  font-size: 8px;
-  font-weight: 900;
-  letter-spacing: 4.4px;
-  text-transform: uppercase;
+  display: none;
 }
+
 .countdown-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.55));
 }
+
 .countdown-unit {
   position: relative;
   min-width: 0;
-  padding: 4px 14px 2px;
+  padding: 5px 18px 3px;
 }
+
 .countdown-unit + .countdown-unit::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 10%;
+  top: 8%;
   width: 1px;
-  height: 78%;
+  height: 80%;
   background: linear-gradient(
     180deg,
     transparent,
-    rgba(213,153,255,0.28) 30%,
-    rgba(255,255,255,0.16) 50%,
-    rgba(255,103,137,0.23) 70%,
+    rgba(217,119,255,0.7) 24%,
+    rgba(255,255,255,0.3) 50%,
+    rgba(255,91,135,0.65) 76%,
     transparent
   );
+  box-shadow: 0 0 8px rgba(213,92,227,0.18);
 }
+
 .countdown-unit strong {
   display: block;
-  font-size: clamp(30px, 3.35vw, 46px);
-  line-height: 0.94;
+  font-size: clamp(34px, 3.8vw, 52px);
+  line-height: 0.95;
   font-weight: 900;
-  letter-spacing: -2.2px;
-  background: linear-gradient(135deg, #f4d6ff 0%, #d783ff 38%, #ff6ea2 72%, #ff8b75 100%);
+  letter-spacing: -2.4px;
+  background: linear-gradient(135deg, #e6a2ff 0%, #d979ff 35%, #ff6db1 68%, #ff7282 100%);
   -webkit-background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 0 12px rgba(205,110,255,0.18));
+  filter:
+    drop-shadow(0 2px 4px rgba(0,0,0,0.55))
+    drop-shadow(0 0 11px rgba(211,99,255,0.16));
 }
+
 .countdown-unit span {
   display: block;
-  margin-top: 9px;
-  color: rgba(255,255,255,0.48);
+  margin-top: 10px;
+  color: rgba(255,255,255,0.72);
   font-size: 7px;
   font-weight: 900;
   letter-spacing: 2.2px;
   text-transform: uppercase;
+  text-shadow: 0 2px 7px rgba(0,0,0,0.9);
 }
+
 .countdown-live {
   width: fit-content;
   margin: 18px auto 0;
@@ -689,5 +687,51 @@ button, input, textarea, select { font: inherit; }
   }
   .scroll-cue-inline {
     margin-left: 0;
+  }
+}
+
+
+/* Box-free hero date + countdown */
+@media (max-width: 800px) {
+  .hero-info-date {
+    min-width: 0;
+    padding: 0;
+    font-size: 15px;
+    letter-spacing: 2.5px;
+  }
+
+  .hero-info-date::before {
+    width: 100px;
+    bottom: -10px;
+  }
+
+  .countdown-wrap {
+    width: min(100%, 560px);
+    margin-top: 27px;
+    padding: 2px 0 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .countdown-label {
+    display: none;
+  }
+
+  .countdown-unit {
+    padding: 3px 6px 2px;
+  }
+
+  .countdown-unit strong {
+    font-size: clamp(26px, 8vw, 38px);
+    letter-spacing: -1.6px;
+  }
+
+  .countdown-unit span {
+    margin-top: 6px;
+    font-size: 6.5px;
+    letter-spacing: 1.2px;
   }
 }

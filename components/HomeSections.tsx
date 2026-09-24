@@ -24,7 +24,7 @@ export function Hero() {
 
       <div className="hero-content page-shell">
         <Image className="hero-logo" src="/mv-logo.svg" alt="Manfest Varchasva" width={92} height={92} priority />
-        <div className="hero-kicker">IIM LUCKNOW</div>
+        <div className="hero-kicker"><span>IIM LUCKNOW</span></div>
         <h1>
           MANFEST-<span>VARCHASVA</span>
         </h1>

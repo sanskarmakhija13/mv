@@ -108,9 +108,20 @@ button, input, textarea, select { font: inherit; }
   font-weight: 900;
   letter-spacing: 9px;
   color: #fff;
+}
+.hero-kicker span {
+  display: inline-block;
+  padding: 7px 15px 7px 23px;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 999px;
+  background: rgba(5, 6, 14, 0.42);
+  backdrop-filter: blur(8px) saturate(115%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    0 8px 24px rgba(0,0,0,0.24);
   text-shadow:
-    0 0 18px rgba(255,255,255,0.16),
-    0 0 28px rgba(192,104,255,0.16);
+    0 1px 2px rgba(0,0,0,0.95),
+    0 0 14px rgba(255,255,255,0.10);
 }
 .hero-kicker::before,
 .hero-kicker::after {
@@ -185,9 +196,12 @@ button, input, textarea, select { font: inherit; }
   background: linear-gradient(180deg, transparent, rgba(220,166,255,0.58), transparent);
 }
 .hero-info-date {
-  padding-inline: 30px;
+  padding: 19px 36px;
   justify-content: center;
-  letter-spacing: 2.8px;
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: 3.1px;
+  min-width: 320px;
 }
 
 .countdown-wrap {
@@ -610,8 +624,10 @@ button, input, textarea, select { font: inherit; }
   .brand-logo { width: 46px; height: 46px; }
   .footer-brand { align-items: flex-start; }
   .footer-logo { width: 64px; height: 64px; }
-  .hero-kicker { font-size: 11px; letter-spacing: 5px; gap: 11px; }
-  .hero-kicker::before, .hero-kicker::after { width: 34px; height: 1.5px; }
+  .hero-kicker { font-size: 11px; letter-spacing: 5px; gap: 10px; }
+  .hero-kicker span { padding: 6px 10px 6px 15px; }
+  .hero-kicker::before, .hero-kicker::after { width: 32px; height: 1.5px; }
+  .hero-info-date { min-width: 0; padding: 16px 24px; font-size: 14px; letter-spacing: 2.4px; }
   .hero h1 { font-size: clamp(42px, 15vw, 66px); }
   .hero-year { font-size: clamp(78px, 28vw, 120px); }
   .countdown-wrap { margin-top: 14px; padding: 11px 6px 12px; border-radius: 14px; }

@@ -38,16 +38,23 @@ export function Hero() {
 
         <p>{site.tagline}</p>
 
-        <div className="hero-actions">
-          <Link className="btn btn-primary" href="/events">
-            Explore events <span>→</span>
-          </Link>
-          <Link className="btn btn-ghost" href="/gallery">
-            View gallery
-          </Link>
-          <a className="scroll-cue scroll-cue-inline" href="#headliners" aria-label="Scroll to content">
-            <span />
-          </a>
+        <div className="hero-actions-shell">
+          <div className="hero-actions">
+            <Link className="btn btn-primary" href="/events">
+              Explore events <span>→</span>
+            </Link>
+            <Link className="btn btn-ghost" href="/gallery">
+              View gallery
+            </Link>
+            <a
+              className="scroll-cue scroll-cue-inline"
+              href="#headliners"
+              aria-label="Scroll to content"
+              title="Scroll down"
+            >
+              <span />
+            </a>
+          </div>
         </div>
       </div>
     </section>

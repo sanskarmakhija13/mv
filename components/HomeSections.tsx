@@ -45,12 +45,11 @@ export function Hero() {
           <Link className="btn btn-ghost" href="/gallery">
             View gallery
           </Link>
+          <a className="scroll-cue scroll-cue-inline" href="#headliners" aria-label="Scroll to content">
+            <span />
+          </a>
         </div>
       </div>
-
-      <a className="scroll-cue" href="#headliners" aria-label="Scroll to content">
-        <span />
-      </a>
     </section>
   );
 }

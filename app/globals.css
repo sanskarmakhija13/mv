@@ -297,7 +297,14 @@ button, input, textarea, select { font: inherit; }
   letter-spacing: 2px;
 }
 .hero-content > p { margin: 19px 0 0; color: rgba(255,255,255,0.78); font-size: 17px; letter-spacing: 2px; }
-.hero-actions { display: flex; justify-content: center; gap: 14px; margin-top: 30px; }
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
 
 .btn {
   min-height: 52px;
@@ -317,8 +324,32 @@ button, input, textarea, select { font: inherit; }
 .btn:hover { transform: translateY(-2px); }
 .btn-primary { background: linear-gradient(90deg, #9b62ff, #ff4f68); box-shadow: 0 14px 40px rgba(206, 67, 163, 0.28); }
 .btn-ghost { border-color: rgba(255,255,255,0.38); background: rgba(7, 8, 18, 0.32); }
-.scroll-cue { position: absolute; z-index: 2; left: 50%; bottom: 18px; width: 30px; height: 50px; border: 1px solid rgba(255,255,255,0.44); border-radius: 20px; transform: translateX(-50%); }
-.scroll-cue span { position: absolute; top: 9px; left: 50%; width: 4px; height: 8px; border-radius: 20px; background: #fff; transform: translateX(-50%); animation: scroll-dot 1.6s infinite ease; }
+.scroll-cue {
+  position: relative;
+  z-index: 2;
+  width: 30px;
+  height: 50px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(255,255,255,0.44);
+  border-radius: 20px;
+  background: rgba(7,8,18,0.22);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+}
+.scroll-cue-inline {
+  margin-left: 6px;
+}
+.scroll-cue span {
+  position: absolute;
+  top: 9px;
+  left: 50%;
+  width: 4px;
+  height: 8px;
+  border-radius: 20px;
+  background: #fff;
+  transform: translateX(-50%);
+  animation: scroll-dot 1.6s infinite ease;
+}
 @keyframes scroll-dot { 0% { transform: translate(-50%, 0); opacity: 0; } 35% { opacity: 1; } 100% { transform: translate(-50%, 17px); opacity: 0; } }
 
 .section { position: relative; padding: 100px 0; overflow: hidden; }
@@ -649,4 +680,14 @@ button, input, textarea, select { font: inherit; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-grid > div:first-child { grid-column: auto; }
   .footer-bottom { flex-direction: column; }
+}
+
+
+@media (max-width: 640px) {
+  .hero-actions {
+    row-gap: 12px;
+  }
+  .scroll-cue-inline {
+    margin-left: 0;
+  }
 }

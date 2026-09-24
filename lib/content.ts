@@ -15,17 +15,17 @@ export const headliners = [
   {
     name: "Seedhe Maut",
     edition: "MV 2025–26",
-    image: "/headliners/seedhe-maut.jpg",
+    image: "/headliners/seedhe-maut-original.jpg",
   },
   {
     name: "Papon",
     edition: "MV 2025–26",
-    image: "/headliners/papon.jpg",
+    image: "/headliners/papon-original.jpg",
   },
   {
     name: "Bismil",
     edition: "MV 2025–26",
-    image: "/headliners/bismil.jpg",
+    image: "/headliners/bismil-original.jpg",
   },
   {
     name: "Salim–Sulaiman",

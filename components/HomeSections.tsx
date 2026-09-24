@@ -70,11 +70,12 @@ export function Headliners() {
         <div className="headliner-grid">
           {headliners.map((artist) => (
             <article className="headliner-card" key={artist.name}>
-              <Image
+              <img
                 src={artist.image}
                 alt={artist.name}
-                fill
-                sizes="(max-width: 800px) 85vw, 28vw"
+                className="headliner-photo"
+                loading="lazy"
+                decoding="async"
               />
               <div className="card-gradient" />
               <div className="headliner-copy">

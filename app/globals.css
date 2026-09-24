@@ -278,8 +278,17 @@ button, input, textarea, select { font: inherit; }
   border: 1px solid rgba(255,255,255,0.1);
   box-shadow: var(--shadow);
 }
-.headliner-card img { object-fit: cover; transition: none; }
-.headliner-card:hover img { transform: none; }
+.headliner-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: none;
+}
+.headliner-card:hover .headliner-photo { transform: none; }
 .headliner-photo.final-crop {
   object-fit: contain;
   object-position: center;

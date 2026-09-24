@@ -262,16 +262,23 @@ button, input, textarea, select { font: inherit; }
 .section-light .section-title p { color: #6f7180; }
 
 .headliner-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 350px));
-  justify-content: center;
+  display: flex;
   gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-inline: contain;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 }
 .headliner-card {
   position: relative;
-  width: 100%;
+  flex: 0 0 350px;
+  width: 350px;
+  min-width: 350px;
   min-height: 0;
   aspect-ratio: 4 / 5;
+  scroll-snap-align: start;
   border-radius: 24px;
   overflow: hidden;
   background: #11131e;

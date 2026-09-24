@@ -16,57 +16,67 @@ export const headliners = [
     name: "Seedhe Maut",
     edition: "MV 2025–26",
     image: "/headliners/seedhe-maut-original.jpg",
+    focus: "50% 58%",
   },
   {
     name: "Papon",
     edition: "MV 2025–26",
     image: "/headliners/papon-original.jpg",
+    focus: "50% 54%",
   },
   {
     name: "Bismil",
     edition: "MV 2025–26",
     image: "/headliners/bismil-original.jpg",
+    focus: "50% 60%",
   },
   {
     name: "Salim–Sulaiman",
     edition: "MV 2024–25",
     image:
       "/headliners/salim-sulaiman.jpeg",
+    focus: "50% 50%",
   },
   {
     name: "Jubin Nautiyal",
     edition: "MV 2023–24",
     image:
       "/headliners/jubin-nautiyal.jpeg",
+    focus: "50% 50%",
   },
   {
     name: "Amit Trivedi",
     edition: "MV 2022–23",
     image:
       "/headliners/amit-trivedi.jpg",
+    focus: "50% 50%",
   },
   {
     name: "Javed Ali",
     edition: "MV 2021–22",
     image:
       "/headliners/javed-ali.jpeg",
+    focus: "50% 50%",
   },
   {
     name: "KK",
     edition: "MV 2020–21",
     image: "/headliners/kk.jpeg",
+    focus: "50% 50%",
   },
   {
     name: "Guru Randhawa",
     edition: "MV 2019–20",
     image:
       "/headliners/guru-randhawa.jpeg",
+    focus: "50% 50%",
   },
   {
     name: "Vishal & Shekhar",
     edition: "MV 2018–19",
     image:
       "/headliners/vishal-shekhar.jpeg",
+    focus: "50% 50%",
   },
 ]
 

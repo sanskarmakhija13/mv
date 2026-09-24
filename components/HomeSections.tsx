@@ -76,6 +76,7 @@ export function Headliners() {
                 className="headliner-photo"
                 loading="lazy"
                 decoding="async"
+                style={{ objectPosition: artist.focus }}
               />
               <div className="card-gradient" />
               <div className="headliner-copy">

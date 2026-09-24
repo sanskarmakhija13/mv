@@ -72,7 +72,7 @@ export const headliners = [
     name: "Vishal & Shekhar",
     edition: "MV 2018–19",
     image:
-      "/headliners/vishal-shekhar.jpeg",
+      "/headliners/vishal-shekhar-final.jpeg",
     focus: "50% 50%",
   },
 ]

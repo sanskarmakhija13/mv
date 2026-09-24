@@ -76,7 +76,7 @@ export function Headliners() {
               <img
                 src={artist.image}
                 alt={artist.name}
-                className={`headliner-photo${index < 3 || artist.name === "Javed Ali" ? " final-crop" : ""}`}
+                className={`headliner-photo${index < 3 || artist.name === "Javed Ali" || artist.name === "Vishal & Shekhar" ? " final-crop" : ""}`}
                 loading="lazy"
                 decoding="async"
               />

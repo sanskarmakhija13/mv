@@ -5,7 +5,7 @@ const root = process.cwd();
 
 const assets = [
   ["https://commons.wikimedia.org/wiki/Special:Redirect/file/Papon%20Euphuism.jpg", "public/headliners/papon.jpg"],
-  ["https://media.assettype.com/knocksense%2F2025-11-18%2Fb0dvgw5m%2FBismilMumbai-30.jpg?auto=format%2Ccompress&fit=crop&h=1200&rect=1077%2C0%2C2177%2C2177&w=1200", "public/headliners/bismil.jpg"],
+  ["https://cdn.starclinch.in/artist/bismil/Pune_never_fails_to_impress_me_with_their_verve.1.6.25_.......bismil_bismilkimehf_FaSaDKi.jpg?flop=false&format=webp&quality=90&width=1920", "public/headliners/bismil.jpg"],
   ["https://commons.wikimedia.org/wiki/Special:Redirect/file/Salim-Sulaiman%20Vitopia.jpg", "public/headliners/salim-sulaiman.jpeg"],
   ["https://commons.wikimedia.org/wiki/Special:Redirect/file/Jubin%20Nauityal%20at%20the%20Good%20Homes%20Awards%202015.jpg", "public/headliners/jubin-nautiyal.jpeg"],
   ["https://commons.wikimedia.org/wiki/Special:Redirect/file/Amit%20Trivedi%20Live%20%28OT%29%20%28cropped%29.jpg", "public/headliners/amit-trivedi.jpg"],

@@ -4,15 +4,15 @@ import path from "node:path";
 const root = process.cwd();
 
 const assets = [
-  ["https://static.toiimg.com/thumb/resizemode-4%2Cwidth-1280%2Cheight-720%2Cmsid-126948726/126948726.jpg", "public/headliners/papon.jpg"],
-  ["https://cdn-az.allevents.in/events8/banners/91667e00-5a9b-11f1-9fd1-657adc2b401f-rimg-w1200-h600-dc180f0f-gmir.jpg?v=1779975963", "public/headliners/bismil.jpg"],
-  ["https://www.hindustantimes.com/ht-img/img/2025/02/06/original/Salim3_1738844088937.JPEG", "public/headliners/salim-sulaiman.jpeg"],
-  ["https://www.hindi.awazthevoice.in/upload/news/1751708593550-jubin-nautiyal_%281%29.jpg", "public/headliners/jubin-nautiyal.jpeg"],
-  ["https://media.assettype.com/freepressjournal/2023-04/c0d6b4b3-ef15-41e5-b3de-1a4e82eaa29d/Snapinsta_app_324911118_137774572475274_2406794815758119213_n_1080.jpg", "public/headliners/amit-trivedi.jpg"],
-  ["https://static.toiimg.com/photo/63952318.cms", "public/headliners/javed-ali.jpeg"],
-  ["https://images.hindustantimes.com/img/2022/06/01/original/singer_kk_death_body_mumbai_last_rites_news_1654104414972.jpg", "public/headliners/kk.jpeg"],
-  ["https://static.toiimg.com/thumb/msid-66955128%2Cwidth-1280%2Cheight-720%2Cimgsize-80887%2Cresizemode-6%2Coverlay-toi_sw%2Cpt-32%2Cy_pad-40/photo.jpg", "public/headliners/guru-randhawa.jpeg"],
-  ["https://i.ndtvimg.com/i/2016-09/vishal-shekhar_640x480_51475162023.jpg", "public/headliners/vishal-shekhar.jpeg"],
+  ["https://commons.wikimedia.org/wiki/Special:Redirect/file/Papon%20Euphuism.jpg", "public/headliners/papon.jpg"],
+  ["https://media.assettype.com/knocksense%2F2025-11-18%2Fb0dvgw5m%2FBismilMumbai-30.jpg?auto=format%2Ccompress&fit=crop&h=1200&rect=1077%2C0%2C2177%2C2177&w=1200", "public/headliners/bismil.jpg"],
+  ["https://commons.wikimedia.org/wiki/Special:Redirect/file/Salim-Sulaiman%20Vitopia.jpg", "public/headliners/salim-sulaiman.jpeg"],
+  ["https://commons.wikimedia.org/wiki/Special:Redirect/file/Jubin%20Nauityal%20at%20the%20Good%20Homes%20Awards%202015.jpg", "public/headliners/jubin-nautiyal.jpeg"],
+  ["https://commons.wikimedia.org/wiki/Special:Redirect/file/Amit%20Trivedi%20Live%20%28OT%29%20%28cropped%29.jpg", "public/headliners/amit-trivedi.jpg"],
+  ["https://commons.wikimedia.org/wiki/Special:Redirect/file/Javed%20Ali%20Youthopia%202016.jpg", "public/headliners/javed-ali.jpeg"],
+  ["https://commons.wikimedia.org/wiki/Special:Redirect/file/KK%20%28125%29.jpg", "public/headliners/kk.jpeg"],
+  ["https://commons.wikimedia.org/wiki/Special:Redirect/file/Guru%20Randhawa%20at%20the%20launch%20of%20MTV%20Unplugged%20Season%208.jpg", "public/headliners/guru-randhawa.jpeg"],
+  ["https://commons.wikimedia.org/wiki/Special:Redirect/file/Vishal-Shekhar%20Indian%20Idol%20Junior%20press%20conference.jpg", "public/headliners/vishal-shekhar.jpeg"],
 ];
 
 function isImage(bytes) {

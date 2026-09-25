@@ -138,22 +138,23 @@ export function LeadersExpress() {
 export function OverTheYears() {
   return (
     <section className="section years-section">
-      <div className="year-outline year-outline-left">2023</div>
-      <div className="year-outline year-outline-right">2024</div>
-
-      <div className="page-shell years-inner">
+      <div className="page-shell">
         <SectionTitle
           eyebrow="THE EXPERIENCE"
           title="Manfest-Varchasva"
           accent="Over the Years"
           description="A look back at the moments, memories and milestones that have defined Manfest-Varchasva."
-          align="center"
         />
 
-        <div className="video-grid">
+        <div className="years-scroll-meta" aria-hidden="true">
+          <span>Scroll to explore</span>
+          <b>→</b>
+        </div>
+
+        <HorizontalScroller className="years-video-scroll">
           <VideoCard id="l6qw-fCkYRM" label="MANFEST-VARCHASVA" year="2023" />
           <VideoCard id="OspT5n1DuOo" label="MANFEST-VARCHASVA" year="2024" />
-        </div>
+        </HorizontalScroller>
       </div>
     </section>
   );

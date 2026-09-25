@@ -149,11 +149,16 @@ export function OverTheYears() {
         <HorizontalScroller className="years-video-scroll">
           <VideoCard id="l6qw-fCkYRM" title="Manfest Varchasva 2025-26" />
           <VideoCard id="OspT5n1DuOo" title="Manfest Varchasva 2024-25" />
+          <VideoCard id="fg6NTY-Ut5Q" title="Manfest Varchasva 2023-24" />
+          <VideoCard id="lU2GkpkDXyk" title="Manfest Varchasva 2022-23" />
+          <VideoCard id="U7qQTRWIDfY" title="Manfest Varchasva 2021-22" />
         </HorizontalScroller>
 
         <div className="years-scroll-meta" aria-hidden="true">
           <span className="years-scroll-dots">
             <i className="is-active" />
+            <i />
+            <i />
             <i />
             <i />
           </span>

@@ -704,18 +704,6 @@ button, input, textarea, select { font: inherit; }
   letter-spacing: 0.2px;
   text-shadow: 0 0 18px rgba(215,105,255,0.08);
 }
-.video-meta strong::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -9px;
-  width: 58px;
-  height: 2px;
-  border-radius: 999px;
-  transform: translateX(-50%);
-  background: linear-gradient(90deg, var(--purple), var(--pink), var(--red));
-  box-shadow: 0 0 12px rgba(236,77,181,0.26);
-}
 .stats-section { background: linear-gradient(180deg, #0c0d18, #111321); }
 .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
 .stat-card { min-height: 168px; display: flex; flex-direction: column; justify-content: flex-end; padding: 22px; border-radius: 22px; border: 1px solid var(--line); background: rgba(255,255,255,0.035); }

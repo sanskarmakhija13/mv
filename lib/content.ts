@@ -97,10 +97,10 @@ export const leaders = [
       "/leaders/apj-abdul-kalam.jpg",
   },
   {
-    name: "Riya Upreti",
-    role: "Founder & CEO, FOBET",
+    name: "Smriti Irani",
+    role: "Former Cabinet Minister",
     image:
-      "/leaders/riya-upreti.jpg",
+      "/leaders/smriti-irani.jpg",
   },
   {
     name: "Shivam Shahi",

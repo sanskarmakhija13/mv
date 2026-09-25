@@ -566,6 +566,9 @@ button, input, textarea, select { font: inherit; }
 .speaker-card:hover .speaker-image-final img {
   transform: none !important;
 }
+.speaker-image-apj img {
+  object-position: center 24%;
+}
 .speaker-copy { padding: 18px; }
 .speaker-copy h3 { margin: 0; font-size: 18px; }
 .speaker-copy p { margin: 7px 0 0; color: var(--muted); line-height: 1.4; font-size: 13px; }

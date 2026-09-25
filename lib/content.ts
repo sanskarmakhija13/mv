@@ -91,10 +91,10 @@ export const leaders = [
       "/leaders/kapil-dev-final.jpg",
   },
   {
-    name: "Gurpreet Chhatwal",
-    role: "CEO, CRISIL Ltd.",
+    name: "Dr. A.P.J. Abdul Kalam",
+    role: "11th President of India",
     image:
-      "/leaders/gurpreet-chhatwal.jpg",
+      "/leaders/apj-abdul-kalam.jpg",
   },
   {
     name: "Riya Upreti",

@@ -69,7 +69,7 @@ export function Headliners() {
         />
 
         <div className="headliner-scroll-meta" aria-hidden="true">
-          <span>Drag to explore</span>
+          <span>Explore the years</span>
           <b>→</b>
         </div>
 
@@ -178,7 +178,6 @@ function VideoCard({ id, title }: { id: string; title: string }) {
         />
       </div>
       <div className="video-meta">
-        <span className="video-meta-mark" aria-hidden="true" />
         <strong>{title}</strong>
       </div>
     </article>

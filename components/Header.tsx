@@ -18,8 +18,13 @@ export function Header() {
         <Link href="/" className="brand" aria-label="Manfest Varchasva home">
           <Image className="brand-logo" src="/mv-logo.svg" alt="" width={52} height={52} priority />
           <span className="brand-copy">
-            <strong>MANFEST</strong>
-            <strong>VARCHASVA</strong>
+            <span className="brand-name">
+              <strong>MANFEST</strong>
+              <strong>VARCHASVA</strong>
+            </span>
+            <span className="brand-tagline">
+              IIM Lucknow’s Annual Business, Cultural and Sports Fest
+            </span>
           </span>
         </Link>
 

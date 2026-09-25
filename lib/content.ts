@@ -85,10 +85,10 @@ export const leaders = [
       "/leaders/dy-chandrachud-final.jpg",
   },
   {
-    name: "Deepali Naair",
-    role: "Group CMO, CK Birla Group",
+    name: "Kapil Dev",
+    role: "Former Indian Cricketer",
     image:
-      "/leaders/deepali-naair.jpg",
+      "/leaders/kapil-dev-final.jpg",
   },
   {
     name: "Gurpreet Chhatwal",

@@ -108,6 +108,12 @@ export const leaders = [
     image:
       "/leaders/jyotiraditya-scindia.jpeg",
   },
+  {
+    name: "Azim Hashim Premji",
+    role: "Chairman, Wipro Limited",
+    image:
+      "/leaders/azim-premji-final.jpg",
+  },
 ];
 
 export const stats = [

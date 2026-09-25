@@ -126,6 +126,12 @@ export const leaders = [
     image:
       "/leaders/duvvuri-subbarao.jpg",
   },
+  {
+    name: "Arjun Rampal",
+    role: "National award winning actor",
+    image:
+      "/leaders/arjun-rampal.jpg",
+  },
 ];
 
 export const stats = [

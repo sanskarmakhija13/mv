@@ -115,7 +115,7 @@ export function LeadersExpress() {
         <HorizontalScroller className="leaders-grid">
           {leaders.map((speaker) => (
             <article className="speaker-card" key={speaker.name}>
-              <div className="speaker-image">
+              <div className={`speaker-image${speaker.name === "Justice D.Y. Chandrachud" ? " speaker-image-final" : ""}`}>
                 <Image
                   src={speaker.image}
                   alt={speaker.name}

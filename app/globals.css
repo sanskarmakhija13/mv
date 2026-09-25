@@ -557,6 +557,15 @@ button, input, textarea, select { font: inherit; }
 .speaker-image { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #151827; }
 .speaker-image img { object-fit: cover; filter: saturate(0.9); transition: transform 0.4s ease; }
 .speaker-card:hover img { transform: scale(1.035); }
+.speaker-image-final img {
+  object-fit: contain;
+  object-position: center;
+  filter: none;
+  transform: none !important;
+}
+.speaker-card:hover .speaker-image-final img {
+  transform: none !important;
+}
 .speaker-copy { padding: 18px; }
 .speaker-copy h3 { margin: 0; font-size: 18px; }
 .speaker-copy p { margin: 7px 0 0; color: var(--muted); line-height: 1.4; font-size: 13px; }

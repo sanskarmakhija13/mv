@@ -82,7 +82,7 @@ export const leaders = [
     name: "Justice D.Y. Chandrachud",
     role: "50th Chief Justice of India",
     image:
-      "/leaders/dy-chandrachud.jpg",
+      "/leaders/dy-chandrachud-final.jpg",
   },
   {
     name: "Deepali Naair",

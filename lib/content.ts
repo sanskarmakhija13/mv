@@ -142,7 +142,7 @@ export const leaders = [
     name: "Ashish Vidyarthi",
     role: "Actor, Motivational Speaker",
     image:
-      "/leaders/ashish-vidyarthi.jpg",
+      "/leaders/ashish-vidyarthi-final.jpg",
   },
 ];
 

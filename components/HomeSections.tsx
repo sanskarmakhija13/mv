@@ -107,7 +107,12 @@ export function LeadersExpress() {
           description="Conversations with leaders across public life, business and entrepreneurship."
         />
 
-        <div className="leaders-grid">
+        <div className="leaders-scroll-meta" aria-hidden="true">
+          <span>Drag to explore</span>
+          <b>→</b>
+        </div>
+
+        <HorizontalScroller className="leaders-grid">
           {leaders.map((speaker) => (
             <article className="speaker-card" key={speaker.name}>
               <div className="speaker-image">
@@ -115,7 +120,7 @@ export function LeadersExpress() {
                   src={speaker.image}
                   alt={speaker.name}
                   fill
-                  sizes="(max-width: 800px) 45vw, 18vw"
+                  sizes="(max-width: 800px) 42vw, 18vw"
                 />
               </div>
               <div className="speaker-copy">
@@ -124,7 +129,7 @@ export function LeadersExpress() {
               </div>
             </article>
           ))}
-        </div>
+        </HorizontalScroller>
       </div>
     </section>
   );

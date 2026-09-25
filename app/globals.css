@@ -500,8 +500,60 @@ button, input, textarea, select { font: inherit; }
 .headliner-copy span { color: #e381ff; font-size: 12px; font-weight: 800; letter-spacing: 3px; }
 .headliner-copy h3 { margin: 7px 0 0; font-size: 30px; letter-spacing: -1px; }
 
-.leaders-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
-.speaker-card { border: 1px solid var(--line); border-radius: 22px; overflow: hidden; background: rgba(255,255,255,0.035); }
+.leaders-scroll-meta {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 9px;
+  margin: -18px 4px 14px 0;
+  color: rgba(255,255,255,0.48);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.leaders-scroll-meta b {
+  color: #df72ff;
+  font-size: 18px;
+  line-height: 1;
+  animation: headliner-hint-nudge 1.8s ease-in-out infinite;
+}
+.leaders-grid {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-inline: contain;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  user-select: none;
+}
+.leaders-grid::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.leaders-grid.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+}
+.leaders-grid img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.speaker-card {
+  flex: 0 0 calc((100% - 64px) / 5);
+  min-width: calc((100% - 64px) / 5);
+  scroll-snap-align: start;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.035);
+}
 .speaker-image { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #151827; }
 .speaker-image img { object-fit: cover; filter: saturate(0.9); transition: transform 0.4s ease; }
 .speaker-card:hover img { transform: scale(1.035); }
@@ -778,5 +830,39 @@ button, input, textarea, select { font: inherit; }
     margin-top: 6px;
     font-size: 6.5px;
     letter-spacing: 1.2px;
+  }
+}
+
+
+/* Leaders Express horizontal carousel */
+@media (max-width: 1040px) {
+  .speaker-card {
+    flex-basis: calc((100% - 32px) / 3);
+    min-width: calc((100% - 32px) / 3);
+  }
+}
+
+@media (max-width: 820px) {
+  .leaders-scroll-meta {
+    font-size: 9px;
+    margin-top: -14px;
+    margin-bottom: 12px;
+  }
+  .speaker-card {
+    flex: 0 0 min(42vw, 240px);
+    min-width: min(42vw, 240px);
+  }
+}
+
+@media (max-width: 560px) {
+  .speaker-card {
+    display: block;
+    grid-template-columns: none;
+    flex: 0 0 min(72vw, 260px);
+    min-width: min(72vw, 260px);
+  }
+  .speaker-image {
+    aspect-ratio: 4 / 5;
+    min-height: 0;
   }
 }

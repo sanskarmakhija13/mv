@@ -562,6 +562,7 @@ button, input, textarea, select { font: inherit; }
   object-position: center;
   filter: none;
   transform: none !important;
+  background: #151827;
 }
 .speaker-card:hover .speaker-image-final img {
   transform: none !important;

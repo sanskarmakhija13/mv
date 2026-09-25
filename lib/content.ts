@@ -142,7 +142,7 @@ export const leaders = [
     name: "Ashish Vidyarthi",
     role: "Actor, Motivational Speaker",
     image:
-      "https://staticimg.amarujala.com/assets/images/2021/05/29/aa_1622252171.jpeg?dpr=1.0&w=750",
+      "/leaders/ashish-vidyarthi-v3.jpg",
   },
 ];
 

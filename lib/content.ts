@@ -132,6 +132,12 @@ export const leaders = [
     image:
       "/leaders/arjun-rampal.jpg",
   },
+  {
+    name: "Ashwin Sanghi",
+    role: "Critically acclaimed writer",
+    image:
+      "/leaders/ashwin-sanghi.jpg",
+  },
 ];
 
 export const stats = [

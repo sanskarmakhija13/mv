@@ -136,7 +136,7 @@ export const leaders = [
     name: "Ashwin Sanghi",
     role: "Critically acclaimed writer",
     image:
-      "/leaders/ashwin-sanghi.jpg",
+      "/leaders/ashwin-sanghi-final.jpg",
   },
 ];
 

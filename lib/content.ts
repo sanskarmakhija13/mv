@@ -114,6 +114,12 @@ export const leaders = [
     image:
       "/leaders/azim-premji-final.jpg",
   },
+  {
+    name: "Dr. Philip Kotler",
+    role: "Father of Modern Marketing",
+    image:
+      "/leaders/philip-kotler.jpeg",
+  },
 ];
 
 export const stats = [

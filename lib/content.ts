@@ -103,10 +103,10 @@ export const leaders = [
       "/leaders/smriti-irani.jpg",
   },
   {
-    name: "Shivam Shahi",
-    role: "Co-Founder & COO, Blue Tokai Coffee Roasters",
+    name: "Jyotiraditya Scindia",
+    role: "Minister of Communications",
     image:
-      "/leaders/shivam-shahi.jpg",
+      "/leaders/jyotiraditya-scindia.jpeg",
   },
 ];
 

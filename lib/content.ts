@@ -38,7 +38,7 @@ export const headliners = [
     name: "Jubin Nautiyal",
     edition: "MV 2023–24",
     image:
-      "/headliners/jubin-nautiyal.jpeg",
+      "/headliners/jubin-nautiyal-final.jpeg",
     focus: "50% 50%",
   },
   {

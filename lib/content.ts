@@ -120,6 +120,12 @@ export const leaders = [
     image:
       "/leaders/philip-kotler.jpeg",
   },
+  {
+    name: "Dr. Duvvuri Subbarao",
+    role: "Ex Governor RBI",
+    image:
+      "/leaders/duvvuri-subbarao.jpg",
+  },
 ];
 
 export const stats = [

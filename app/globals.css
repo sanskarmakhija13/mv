@@ -122,15 +122,13 @@ button, input, textarea, select { font: inherit; }
 .hero-logo { width: 92px; height: 92px; object-fit: contain; margin: 0 auto 14px; filter: drop-shadow(0 14px 34px rgba(0,0,0,0.35)); }
 .hero-kicker {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 22px;
+  gap: 8px;
   margin-bottom: 24px;
-  font-size: 15px;
-  font-weight: 900;
-  letter-spacing: 9px;
   color: #fff;
 }
-.hero-kicker span {
+.hero-kicker-main {
   display: inline-block;
   padding: 7px 15px 7px 23px;
   border: 1px solid rgba(255,255,255,0.10);
@@ -140,19 +138,38 @@ button, input, textarea, select { font: inherit; }
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.06),
     0 8px 24px rgba(0,0,0,0.24);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 9px;
   text-shadow:
     0 1px 2px rgba(0,0,0,0.95),
     0 0 14px rgba(255,255,255,0.10);
 }
-.hero-kicker::before,
-.hero-kicker::after {
+.hero-kicker small {
+  display: block;
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 2.7px;
+  color: rgba(255,255,255,0.72);
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.75);
+}
+.hero-kicker {
+  position: relative;
+}
+.hero-kicker-main::before,
+.hero-kicker-main::after {
   content: "";
+  position: absolute;
+  top: 17px;
   width: 72px;
   height: 2px;
   border-radius: 999px;
   background: linear-gradient(90deg, #9c64ff, #ec4db5 55%, #ff5368);
   box-shadow: 0 0 14px rgba(208,86,220,0.22);
 }
+.hero-kicker-main::before { right: calc(100% + 22px); }
+.hero-kicker-main::after { left: calc(100% + 22px); }
 .hero h1 {
   margin: 0;
   font-size: clamp(46px, 7vw, 104px);
@@ -678,9 +695,12 @@ button, input, textarea, select { font: inherit; }
   .brand-logo { width: 46px; height: 46px; }
   .footer-brand { align-items: flex-start; }
   .footer-logo { width: 64px; height: 64px; }
-  .hero-kicker { font-size: 11px; letter-spacing: 5px; gap: 10px; }
-  .hero-kicker span { padding: 6px 10px 6px 15px; }
-  .hero-kicker::before, .hero-kicker::after { width: 32px; height: 1.5px; }
+  .hero-kicker { gap: 6px; }
+  .hero-kicker-main { padding: 6px 10px 6px 15px; font-size: 11px; letter-spacing: 5px; }
+  .hero-kicker-main::before, .hero-kicker-main::after { width: 32px; height: 1.5px; top: 14px; }
+  .hero-kicker-main::before { right: calc(100% + 10px); }
+  .hero-kicker-main::after { left: calc(100% + 10px); }
+  .hero-kicker small { font-size: 6.5px; letter-spacing: 1.5px; }
   .hero-info-date { min-width: 0; padding: 16px 24px; font-size: 14px; letter-spacing: 2.4px; }
   .hero h1 { font-size: clamp(42px, 15vw, 66px); }
   .hero-year { font-size: clamp(78px, 28vw, 120px); }

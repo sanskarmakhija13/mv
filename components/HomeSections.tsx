@@ -116,12 +116,21 @@ export function LeadersExpress() {
           {leaders.map((speaker) => (
             <article className="speaker-card" key={speaker.name}>
               <div className={`speaker-image${speaker.name === "Justice D.Y. Chandrachud" || speaker.name === "Kapil Dev" ? " speaker-image-final" : ""}${speaker.name === "Dr. A.P.J. Abdul Kalam" ? " speaker-image-apj" : ""}`}>
-                <Image
-                  src={speaker.image}
-                  alt={speaker.name}
-                  fill
-                  sizes="(max-width: 800px) 42vw, 18vw"
-                />
+                {speaker.name === "Ashish Vidyarthi" ? (
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <Image
+                    src={speaker.image}
+                    alt={speaker.name}
+                    fill
+                    sizes="(max-width: 800px) 42vw, 18vw"
+                  />
+                )}
               </div>
               <div className="speaker-copy">
                 <h3>{speaker.name}</h3>

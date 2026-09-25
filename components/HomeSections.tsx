@@ -146,36 +146,40 @@ export function OverTheYears() {
           description="A look back at the moments, memories and milestones that have defined Manfest-Varchasva."
         />
 
+        <HorizontalScroller className="years-video-scroll">
+          <VideoCard id="l6qw-fCkYRM" title="Manfest Varchasva 2025-26" />
+          <VideoCard id="OspT5n1DuOo" title="Manfest Varchasva 2024-25" />
+        </HorizontalScroller>
+
         <div className="years-scroll-meta" aria-hidden="true">
-          <span>Scroll to explore</span>
+          <span className="years-scroll-dots">
+            <i className="is-active" />
+            <i />
+            <i />
+          </span>
+          <span>Drag to explore</span>
           <b>→</b>
         </div>
-
-        <HorizontalScroller className="years-video-scroll">
-          <VideoCard id="l6qw-fCkYRM" label="MANFEST-VARCHASVA" year="2023" />
-          <VideoCard id="OspT5n1DuOo" label="MANFEST-VARCHASVA" year="2024" />
-        </HorizontalScroller>
       </div>
     </section>
   );
 }
 
-function VideoCard({ id, label, year }: { id: string; label: string; year: string }) {
+function VideoCard({ id, title }: { id: string; title: string }) {
   return (
     <article className="video-card">
       <div className="video-frame">
         <iframe
           src={`https://www.youtube.com/embed/${id}`}
-          title={`Manfest-Varchasva ${year}`}
+          title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           loading="lazy"
         />
       </div>
       <div className="video-meta">
-        <span className="video-line" />
-        <strong>{label}</strong>
-        <b>{year}</b>
+        <span className="video-meta-mark" aria-hidden="true" />
+        <strong>{title}</strong>
       </div>
     </article>
   );

@@ -1,43 +1,202 @@
 .stats-section .stats-grid {
   width: 100%;
   grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-  gap: 14px !important;
+  gap: 18px !important;
+  margin-top: 18px !important;
 }
 
 .stats-section .stat-card {
+  --accent: #8f8cff;
+  --accent-rgb: 143, 140, 255;
+  position: relative !important;
   min-width: 0;
-  min-height: 235px !important;
-  padding: 24px 12px 22px !important;
+  min-height: 250px !important;
+  padding: 30px 18px 24px !important;
+  border: 0 !important;
+  border-radius: 0 112px 0 0 !important;
+  background:
+    radial-gradient(circle at 18% 80%, rgba(var(--accent-rgb), .18), transparent 36%),
+    linear-gradient(180deg, rgba(14, 16, 35, .40), rgba(6, 8, 18, .06)) !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+  display: block !important;
+  text-align: left !important;
+  isolation: isolate;
 }
 
-.stats-section .stat-card strong {
-  font-size: clamp(30px, 2.8vw, 48px) !important;
-  letter-spacing: -1.4px !important;
-  white-space: nowrap;
+.stats-section .stat-card:nth-child(1) { --accent: #8f8cff; --accent-rgb: 143, 140, 255; }
+.stats-section .stat-card:nth-child(2) { --accent: #ff79c8; --accent-rgb: 255, 121, 200; }
+.stats-section .stat-card:nth-child(3) { --accent: #77b7ff; --accent-rgb: 119, 183, 255; }
+.stats-section .stat-card:nth-child(4) { --accent: #d87dff; --accent-rgb: 216, 125, 255; }
+.stats-section .stat-card:nth-child(5) { --accent: #ff6cae; --accent-rgb: 255, 108, 174; }
+
+/* Curved neon frame: deliberately open on the left/bottom to make the row feel less boxy. */
+.stats-section .stat-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 2px 0 0 8px;
+  border-top: 1px solid rgba(var(--accent-rgb), .72);
+  border-right: 1px solid rgba(var(--accent-rgb), .72);
+  border-radius: 0 112px 0 0;
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(var(--accent-rgb), .16), transparent 56%),
+    linear-gradient(180deg, rgba(255,255,255,.018), transparent 70%);
+  box-shadow:
+    18px -10px 54px rgba(var(--accent-rgb), .07),
+    inset -1px 1px 0 rgba(255,255,255,.025);
 }
 
-.stats-section .stat-card span {
-  font-size: 10px !important;
-  letter-spacing: 2px !important;
-  white-space: nowrap;
+/* Atmospheric lower scene. Each card gets a slightly different visual language. */
+.stats-section .stat-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 96px;
+  opacity: .82;
+  border-bottom: 1px solid rgba(var(--accent-rgb), .88);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 34%, #000 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 34%, #000 100%);
+}
+
+/* campus skyline */
+.stats-section .stat-card:nth-child(1)::after {
+  background:
+    linear-gradient(to top, rgba(var(--accent-rgb), .24), transparent 74%),
+    repeating-linear-gradient(90deg, rgba(var(--accent-rgb), .28) 0 9px, transparent 9px 15px),
+    linear-gradient(90deg, transparent 0 7%, rgba(var(--accent-rgb), .34) 7% 21%, transparent 21% 26%, rgba(var(--accent-rgb), .22) 26% 47%, transparent 47% 55%, rgba(var(--accent-rgb), .30) 55% 74%, transparent 74% 80%, rgba(var(--accent-rgb), .20) 80% 94%, transparent 94%);
+  background-size: 100% 100%, 100% 30px, 100% 58px;
+  background-position: center, bottom, bottom;
+  background-repeat: no-repeat;
+}
+
+/* podium / trophy glow */
+.stats-section .stat-card:nth-child(2)::after {
+  background:
+    radial-gradient(ellipse at 50% 92%, rgba(var(--accent-rgb), .42), transparent 38%),
+    linear-gradient(90deg, transparent 12%, rgba(var(--accent-rgb), .25) 12% 30%, transparent 30% 34%, rgba(var(--accent-rgb), .34) 34% 62%, transparent 62% 67%, rgba(var(--accent-rgb), .22) 67% 86%, transparent 86%);
+  background-size: 100% 100%, 100% 34px;
+  background-position: center, bottom;
+  background-repeat: no-repeat;
+}
+
+/* stage beams */
+.stats-section .stat-card:nth-child(3)::after {
+  background:
+    linear-gradient(72deg, transparent 0 31%, rgba(var(--accent-rgb), .16) 32% 39%, transparent 40% 100%),
+    linear-gradient(108deg, transparent 0 58%, rgba(var(--accent-rgb), .15) 59% 67%, transparent 68% 100%),
+    radial-gradient(ellipse at 50% 100%, rgba(var(--accent-rgb), .36), transparent 52%);
+}
+
+/* crowd field */
+.stats-section .stat-card:nth-child(4)::after {
+  background:
+    radial-gradient(circle at 11px 59px, rgba(var(--accent-rgb), .70) 0 3px, transparent 3.5px),
+    radial-gradient(circle at 28px 67px, rgba(var(--accent-rgb), .42) 0 4px, transparent 4.5px),
+    radial-gradient(circle at 44px 57px, rgba(var(--accent-rgb), .62) 0 3px, transparent 3.5px),
+    linear-gradient(to top, rgba(var(--accent-rgb), .22), transparent 72%);
+  background-size: 54px 84px, 54px 84px, 54px 84px, 100% 100%;
+  background-repeat: repeat-x, repeat-x, repeat-x, no-repeat;
+  background-position: 0 bottom, 0 bottom, 0 bottom, center;
+}
+
+/* partner flags / banners */
+.stats-section .stat-card:nth-child(5)::after {
+  background:
+    repeating-linear-gradient(90deg, transparent 0 11px, rgba(var(--accent-rgb), .34) 11px 16px, transparent 16px 29px),
+    linear-gradient(to top, rgba(var(--accent-rgb), .23), transparent 72%);
+  background-size: 100% 62px, 100% 100%;
+  background-position: bottom, center;
+  background-repeat: no-repeat;
+}
+
+.stats-section .stat-card > div:first-of-type {
+  display: none !important;
 }
 
 .stats-section .stat-card > div:nth-of-type(2) {
-  width: 64px !important;
-  height: 64px !important;
-  margin-bottom: 18px !important;
+  width: 58px !important;
+  height: 58px !important;
+  margin: 0 0 18px 0 !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(var(--accent-rgb), .62) !important;
+  background: rgba(8, 11, 26, .78) !important;
+  color: var(--accent) !important;
+  box-shadow:
+    0 0 28px rgba(var(--accent-rgb), .15) !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.stats-section .stat-card > div:nth-of-type(2) svg {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+/* Handshake icon for Partners. The fifth card's existing icon shell is intentionally empty. */
+.stats-section .stat-card:nth-child(5) > div:nth-of-type(2)::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  display: block;
+  background: var(--accent);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' d='M8.5 12.5 11 15a2 2 0 0 0 2.8 0l4.7-4.7M3 8l4-3 4 2-3.5 3.5a2 2 0 0 0 2.8 2.8L13 11l5 4.5M3 8v7l4 4 2-2 2 2 2-2 2 1 5-5V8l-4-3-4 2-1.5-1.1'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' d='M8.5 12.5 11 15a2 2 0 0 0 2.8 0l4.7-4.7M3 8l4-3 4 2-3.5 3.5a2 2 0 0 0 2.8 2.8L13 11l5 4.5M3 8v7l4 4 2-2 2 2 2-2 2 1 5-5V8l-4-3-4 2-1.5-1.1'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.stats-section .stat-card strong {
+  display: block !important;
+  margin: 0 !important;
+  font-size: clamp(34px, 3vw, 48px) !important;
+  line-height: .96 !important;
+  letter-spacing: -1.7px !important;
+  white-space: nowrap;
+  background: linear-gradient(135deg, #fff 0%, var(--accent) 84%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  text-shadow: 0 0 24px rgba(var(--accent-rgb), .12) !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.stats-section .stat-card span {
+  display: block !important;
+  margin-top: 10px !important;
+  color: rgba(242, 240, 255, .74) !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 2.2px !important;
+  text-transform: uppercase !important;
+  white-space: nowrap;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+@media (min-width: 901px) {
+  .stats-section .stat-card:nth-child(2),
+  .stats-section .stat-card:nth-child(4) {
+    transform: translateY(12px);
+  }
 }
 
 @media (max-width: 900px) {
   .stats-section .stats-grid {
-    grid-template-columns: repeat(5, minmax(190px, 1fr)) !important;
+    grid-template-columns: repeat(5, minmax(210px, 1fr)) !important;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scrollbar-width: none;
-    padding-bottom: 8px;
+    padding: 4px 0 12px;
   }
 
   .stats-section .stats-grid::-webkit-scrollbar {
     display: none;
+  }
+
+  .stats-section .stat-card {
+    min-height: 230px !important;
   }
 }

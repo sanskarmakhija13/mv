@@ -1,0 +1,35 @@
+@media (hover: hover) and (pointer: fine) {
+  .headliner-card {
+    transition:
+      transform 0.3s cubic-bezier(.22,.61,.36,1),
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+    transform-origin: center;
+    will-change: transform;
+  }
+
+  .headliner-photo {
+    transition: transform 0.42s cubic-bezier(.22,.61,.36,1), filter 0.35s ease;
+  }
+
+  .headliner-copy {
+    transition: transform 0.3s ease;
+  }
+
+  .headliner-card:hover {
+    transform: scale(1.012);
+    border-color: rgba(221, 114, 255, 0.5);
+    box-shadow:
+      0 24px 54px rgba(0, 0, 0, 0.46),
+      0 0 28px rgba(190, 90, 255, 0.14);
+  }
+
+  .headliner-card:hover .headliner-photo:not(.final-crop) {
+    transform: scale(1.045);
+    filter: saturate(1.08) contrast(1.02);
+  }
+
+  .headliner-card:hover .headliner-copy {
+    transform: translateY(-3px);
+  }
+}

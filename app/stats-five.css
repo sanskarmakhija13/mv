@@ -1,0 +1,43 @@
+.stats-section .stats-grid {
+  width: 100%;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+}
+
+.stats-section .stat-card {
+  min-width: 0;
+  min-height: 235px !important;
+  padding: 24px 12px 22px !important;
+}
+
+.stats-section .stat-card strong {
+  font-size: clamp(30px, 2.8vw, 48px) !important;
+  letter-spacing: -1.4px !important;
+  white-space: nowrap;
+}
+
+.stats-section .stat-card span {
+  font-size: 10px !important;
+  letter-spacing: 2px !important;
+  white-space: nowrap;
+}
+
+.stats-section .stat-card > div:nth-of-type(2) {
+  width: 64px !important;
+  height: 64px !important;
+  margin-bottom: 18px !important;
+}
+
+@media (max-width: 900px) {
+  .stats-section .stats-grid {
+    grid-template-columns: repeat(5, minmax(190px, 1fr)) !important;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    padding-bottom: 8px;
+  }
+
+  .stats-section .stats-grid::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
+import "./stats-five.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 

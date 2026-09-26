@@ -5,7 +5,9 @@ import "./stats-five.css";
 import "./stats-overrides.css";
 import "./hero-overrides.css";
 import "./footer-overrides.css";
+import "./partner-carousel.css";
 import { Header } from "@/components/Header";
+import { PartnerCarousel } from "@/components/PartnerCarousel";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -28,6 +30,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       <body>
         <Header />
         <main>{children}</main>
+        <PartnerCarousel />
         <Footer />
       </body>
     </html>

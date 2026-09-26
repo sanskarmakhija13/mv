@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 import "./stats-five.css";
 import "./stats-overrides.css";
+import "./hero-overrides.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 

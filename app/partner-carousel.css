@@ -1,0 +1,118 @@
+.global-partners {
+  padding: 72px 0 58px;
+  background: #f5f3f8;
+  color: #11121a;
+  border-top: 1px solid #e6e2ea;
+}
+
+.global-partners-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 28px;
+}
+
+.global-partners-heading .eyebrow {
+  margin-bottom: 10px;
+}
+
+.global-partners-heading h2 {
+  margin: 0;
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 0.98;
+  letter-spacing: -2px;
+}
+
+.global-partners-heading h2 span {
+  background: linear-gradient(90deg, #9c64ff, #ec4db5 58%, #ff5368);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.global-partners-heading p {
+  max-width: 360px;
+  margin: 0;
+  color: #686b78;
+  line-height: 1.55;
+  text-align: right;
+}
+
+.global-partners-viewport {
+  overflow: hidden;
+}
+
+.global-partners-track {
+  display: flex;
+  transition: transform 0.7s cubic-bezier(.22,.61,.36,1);
+  will-change: transform;
+}
+
+.global-partners-page {
+  flex: 0 0 100%;
+  width: 100%;
+  display: grid;
+  gap: 14px;
+}
+
+.global-partner-logo {
+  min-height: 122px;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  border: 1px solid #e2dfe7;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.global-partner-logo img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 78px;
+  object-fit: contain;
+}
+
+.global-partners-dots {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 20px;
+}
+
+.global-partners-dots button {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #c9c6d0;
+  cursor: pointer;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.global-partners-dots button.is-active {
+  width: 22px;
+  background: linear-gradient(90deg, #9c64ff, #ec4db5);
+}
+
+@media (max-width: 820px) {
+  .global-partners {
+    padding: 58px 0 48px;
+  }
+
+  .global-partners-heading {
+    display: block;
+  }
+
+  .global-partners-heading p {
+    margin-top: 12px;
+    text-align: left;
+  }
+
+  .global-partner-logo {
+    min-height: 106px;
+    padding: 16px;
+  }
+}

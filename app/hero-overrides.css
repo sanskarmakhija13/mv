@@ -1,0 +1,7 @@
+.hero-kicker-main {
+  font-size: clamp(18px, 1.7vw, 24px) !important;
+}
+
+.hero-kicker small {
+  font-size: clamp(10.5px, 0.95vw, 13px) !important;
+}

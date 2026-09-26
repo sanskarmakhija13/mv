@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { partnerLogos } from "@/lib/content";
 
 function getPerPage() {
@@ -14,7 +14,11 @@ function getPerPage() {
 export function PartnerCarousel() {
   const [perPage, setPerPage] = useState(5);
   const [page, setPage] = useState(0);
-  const [paused, setPaused] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [dragging, setDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState(0);
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const dragStartX = useRef(0);
 
   useEffect(() => {
     const update = () => setPerPage(getPerPage());
@@ -33,15 +37,33 @@ export function PartnerCarousel() {
 
   useEffect(() => {
     setPage(0);
+    setDragOffset(0);
   }, [perPage]);
 
   useEffect(() => {
-    if (paused || pages.length <= 1) return;
+    if (hovered || dragging || pages.length <= 1) return;
     const timer = window.setInterval(() => {
       setPage((current) => (current + 1) % pages.length);
     }, 5000);
     return () => window.clearInterval(timer);
-  }, [paused, pages.length]);
+  }, [hovered, dragging, pages.length]);
+
+  const finishDrag = (clientX: number) => {
+    if (!dragging || pages.length <= 1) return;
+
+    const width = viewportRef.current?.clientWidth ?? 1;
+    const delta = clientX - dragStartX.current;
+    const threshold = Math.min(90, width * 0.12);
+
+    if (delta <= -threshold) {
+      setPage((current) => (current + 1) % pages.length);
+    } else if (delta >= threshold) {
+      setPage((current) => (current - 1 + pages.length) % pages.length);
+    }
+
+    setDragging(false);
+    setDragOffset(0);
+  };
 
   return (
     <section className="global-partners" aria-label="Our partners">
@@ -55,13 +77,35 @@ export function PartnerCarousel() {
         </div>
 
         <div
-          className="global-partners-viewport"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
+          ref={viewportRef}
+          className={`global-partners-viewport${dragging ? " is-dragging" : ""}`}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          onPointerDown={(event) => {
+            if (pages.length <= 1) return;
+            dragStartX.current = event.clientX;
+            setDragging(true);
+            setDragOffset(0);
+            event.currentTarget.setPointerCapture(event.pointerId);
+          }}
+          onPointerMove={(event) => {
+            if (!dragging) return;
+            setDragOffset(event.clientX - dragStartX.current);
+          }}
+          onPointerUp={(event) => {
+            finishDrag(event.clientX);
+            if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+              event.currentTarget.releasePointerCapture(event.pointerId);
+            }
+          }}
+          onPointerCancel={() => {
+            setDragging(false);
+            setDragOffset(0);
+          }}
         >
           <div
-            className="global-partners-track"
-            style={{ transform: `translateX(-${page * 100}%)` }}
+            className={`global-partners-track${dragging ? " is-dragging" : ""}`}
+            style={{ transform: `translateX(calc(-${page * 100}% + ${dragOffset}px))` }}
           >
             {pages.map((group, groupIndex) => (
               <div
@@ -77,6 +121,7 @@ export function PartnerCarousel() {
                       width={180}
                       height={90}
                       sizes="(max-width: 560px) 45vw, (max-width: 900px) 30vw, 18vw"
+                      draggable={false}
                     />
                   </div>
                 ))}

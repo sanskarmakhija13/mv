@@ -1,5 +1,7 @@
+import Image from "next/image";
 import { SectionTitle } from "@/components/SectionTitle";
 import { stats } from "@/lib/content";
+import styles from "./about.module.css";
 
 export const metadata = { title: "About us" };
 
@@ -94,6 +96,26 @@ export default function AboutPage() {
                 Successive student teams continue to build on that legacy, growing the scale, energy and reach of Manfest-Varchasva with every edition.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={`section section-ink ${styles.teamSection}`}>
+        <div className="page-shell">
+          <SectionTitle
+            eyebrow="THE TEAM"
+            title="Meet the"
+            accent="Manfest-Varchasva Core Team"
+          />
+
+          <div className={styles.teamPhoto}>
+            <Image
+              src="/about/mv-core-team-2026.webp"
+              alt="Manfest-Varchasva Core Team at IIM Lucknow"
+              width={1200}
+              height={800}
+              sizes="(max-width: 820px) calc(100vw - 28px), 1180px"
+            />
           </div>
         </div>
       </section>

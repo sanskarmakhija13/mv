@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import type { PointerEvent as ReactPointerEvent } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { partnerLogos } from "@/lib/content";
 
@@ -77,7 +78,7 @@ export function PartnerCarousel() {
     return () => window.clearInterval(timer);
   }, [hovered, dragging, pages.length]);
 
-  const endDrag = (event: React.PointerEvent<HTMLDivElement>) => {
+  const endDrag = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (activePointer.current !== event.pointerId) return;
 
     const viewport = viewportRef.current;

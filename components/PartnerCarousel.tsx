@@ -16,9 +16,12 @@ export function PartnerCarousel() {
   const [page, setPage] = useState(0);
   const [hovered, setHovered] = useState(false);
   const [dragging, setDragging] = useState(false);
-  const [dragOffset, setDragOffset] = useState(0);
+
   const viewportRef = useRef<HTMLDivElement>(null);
+  const activePointer = useRef<number | null>(null);
   const dragStartX = useRef(0);
+  const dragStartScrollLeft = useRef(0);
+  const draggingRef = useRef(false);
 
   useEffect(() => {
     const update = () => setPerPage(getPerPage());
@@ -35,34 +38,61 @@ export function PartnerCarousel() {
     return result;
   }, [perPage]);
 
+  const scrollToPage = (nextPage: number, behavior: ScrollBehavior = "smooth") => {
+    const viewport = viewportRef.current;
+    if (!viewport || pages.length === 0) return;
+
+    const normalized = (nextPage + pages.length) % pages.length;
+    setPage(normalized);
+    viewport.scrollTo({
+      left: normalized * viewport.clientWidth,
+      behavior,
+    });
+  };
+
   useEffect(() => {
     setPage(0);
-    setDragOffset(0);
+    requestAnimationFrame(() => {
+      viewportRef.current?.scrollTo({ left: 0, behavior: "auto" });
+    });
   }, [perPage]);
 
   useEffect(() => {
     if (hovered || dragging || pages.length <= 1) return;
+
     const timer = window.setInterval(() => {
-      setPage((current) => (current + 1) % pages.length);
+      const viewport = viewportRef.current;
+      if (!viewport) return;
+
+      setPage((current) => {
+        const next = (current + 1) % pages.length;
+        viewport.scrollTo({
+          left: next * viewport.clientWidth,
+          behavior: "smooth",
+        });
+        return next;
+      });
     }, 5000);
+
     return () => window.clearInterval(timer);
   }, [hovered, dragging, pages.length]);
 
-  const finishDrag = (clientX: number) => {
-    if (!dragging || pages.length <= 1) return;
+  const endDrag = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (activePointer.current !== event.pointerId) return;
 
-    const width = viewportRef.current?.clientWidth ?? 1;
-    const delta = clientX - dragStartX.current;
-    const threshold = Math.min(90, width * 0.12);
+    const viewport = viewportRef.current;
+    draggingRef.current = false;
+    activePointer.current = null;
+    setDragging(false);
 
-    if (delta <= -threshold) {
-      setPage((current) => (current + 1) % pages.length);
-    } else if (delta >= threshold) {
-      setPage((current) => (current - 1 + pages.length) % pages.length);
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
     }
 
-    setDragging(false);
-    setDragOffset(0);
+    if (!viewport || pages.length <= 1) return;
+
+    const nearest = Math.round(viewport.scrollLeft / Math.max(viewport.clientWidth, 1));
+    scrollToPage(Math.min(Math.max(nearest, 0), pages.length - 1));
   };
 
   return (
@@ -81,32 +111,47 @@ export function PartnerCarousel() {
           className={`global-partners-viewport${dragging ? " is-dragging" : ""}`}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
+          onScroll={(event) => {
+            if (draggingRef.current || pages.length <= 1) return;
+            const viewport = event.currentTarget;
+            const nearest = Math.round(viewport.scrollLeft / Math.max(viewport.clientWidth, 1));
+            if (nearest !== page && nearest >= 0 && nearest < pages.length) {
+              setPage(nearest);
+            }
+          }}
           onPointerDown={(event) => {
-            if (pages.length <= 1) return;
+            if (pages.length <= 1 || event.button !== 0) return;
+
+            const viewport = viewportRef.current;
+            if (!viewport) return;
+
+            event.preventDefault();
+            activePointer.current = event.pointerId;
             dragStartX.current = event.clientX;
+            dragStartScrollLeft.current = viewport.scrollLeft;
+            draggingRef.current = true;
             setDragging(true);
-            setDragOffset(0);
             event.currentTarget.setPointerCapture(event.pointerId);
           }}
           onPointerMove={(event) => {
-            if (!dragging) return;
-            setDragOffset(event.clientX - dragStartX.current);
+            if (!draggingRef.current || activePointer.current !== event.pointerId) return;
+
+            const viewport = viewportRef.current;
+            if (!viewport) return;
+
+            event.preventDefault();
+            const delta = event.clientX - dragStartX.current;
+            viewport.scrollLeft = dragStartScrollLeft.current - delta;
           }}
-          onPointerUp={(event) => {
-            finishDrag(event.clientX);
-            if (event.currentTarget.hasPointerCapture(event.pointerId)) {
-              event.currentTarget.releasePointerCapture(event.pointerId);
-            }
-          }}
-          onPointerCancel={() => {
+          onPointerUp={endDrag}
+          onPointerCancel={endDrag}
+          onLostPointerCapture={() => {
+            draggingRef.current = false;
+            activePointer.current = null;
             setDragging(false);
-            setDragOffset(0);
           }}
         >
-          <div
-            className={`global-partners-track${dragging ? " is-dragging" : ""}`}
-            style={{ transform: `translateX(calc(-${page * 100}% + ${dragOffset}px))` }}
-          >
+          <div className="global-partners-track">
             {pages.map((group, groupIndex) => (
               <div
                 className="global-partners-page"
@@ -137,7 +182,7 @@ export function PartnerCarousel() {
                 type="button"
                 key={index}
                 className={index === page ? "is-active" : ""}
-                onClick={() => setPage(index)}
+                onClick={() => scrollToPage(index)}
                 aria-label={`Show partner logos ${index + 1}`}
               />
             ))}

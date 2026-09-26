@@ -6,6 +6,7 @@ import "./stats-overrides.css";
 import "./hero-overrides.css";
 import "./footer-overrides.css";
 import "./partner-carousel.css";
+import "./interaction-overrides.css";
 import { Header } from "@/components/Header";
 import { PartnerCarousel } from "@/components/PartnerCarousel";
 import { Footer } from "@/components/Footer";

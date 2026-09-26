@@ -392,7 +392,7 @@ export function GalleryPreview() {
       <div className="page-shell">
         <div className="title-row">
           <SectionTitle
-            eyebrow="IN PIC4URES"
+            eyebrow="IN PICTURES"
             title="The"
             accent="MV Energy"
             description="Stage lights, conversations, competitions and crowds."

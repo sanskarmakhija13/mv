@@ -47,7 +47,7 @@
   content: none !important;
 }
 
-/* Same typographic language as the countdown above; the countdown itself is untouched. */
+/* Keep the locked countdown-style typography, but move the stats to a cool white/blue palette. */
 .stats-section .stat-card strong {
   display: block !important;
   margin: 0 !important;
@@ -56,13 +56,13 @@
   font-weight: 900 !important;
   letter-spacing: -2.4px !important;
   white-space: nowrap;
-  background: linear-gradient(135deg, #e6a2ff 0%, #d979ff 35%, #ff6db1 68%, #ff7282 100%) !important;
+  background: linear-gradient(135deg, #f7fbff 0%, #dfeaff 32%, #a8d2ff 68%, #72b8ff 100%) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   color: transparent !important;
   filter:
     drop-shadow(0 2px 4px rgba(0,0,0,0.42))
-    drop-shadow(0 0 11px rgba(211,99,255,0.12));
+    drop-shadow(0 0 10px rgba(112,184,255,0.10));
   text-shadow: none !important;
   position: relative !important;
   z-index: 1 !important;
@@ -71,7 +71,7 @@
 .stats-section .stat-card span {
   display: block !important;
   margin-top: 10px !important;
-  color: rgba(255,255,255,0.72) !important;
+  color: rgba(211, 224, 241, 0.82) !important;
   font-size: 7px !important;
   font-weight: 900 !important;
   letter-spacing: 2.2px !important;

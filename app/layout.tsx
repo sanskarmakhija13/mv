@@ -8,7 +8,7 @@ import "./footer-overrides.css";
 import "./partner-carousel.css";
 import "./interaction-overrides.css";
 import { Header } from "@/components/Header";
-import { PartnerCarousel } from "@/components/PartnerCarousel";
+import { SitePartnerCarousel } from "@/components/SitePartnerCarousel";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       <body>
         <Header />
         <main>{children}</main>
-        <PartnerCarousel />
+        <SitePartnerCarousel />
         <Footer />
       </body>
     </html>

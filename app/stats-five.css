@@ -2,155 +2,93 @@
   width: 100%;
   grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
   gap: 0 !important;
-  margin-top: 20px !important;
+  margin-top: 26px !important;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.34));
 }
 
 .stats-section .stat-card {
-  --accent: #8f8cff;
-  --accent-rgb: 143, 140, 255;
   position: relative !important;
   min-width: 0;
-  min-height: 238px !important;
-  padding: 22px 28px 20px !important;
+  min-height: 0 !important;
+  padding: 12px 18px 10px !important;
   border: 0 !important;
   border-radius: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
   overflow: visible !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-start !important;
-  align-items: flex-start !important;
-  text-align: left !important;
+  display: block !important;
+  text-align: center !important;
   transform: none !important;
 }
 
-.stats-section .stat-card:nth-child(1) { --accent: #8f8cff; --accent-rgb: 143, 140, 255; }
-.stats-section .stat-card:nth-child(2) { --accent: #ff79c8; --accent-rgb: 255, 121, 200; }
-.stats-section .stat-card:nth-child(3) { --accent: #77b7ff; --accent-rgb: 119, 183, 255; }
-.stats-section .stat-card:nth-child(4) { --accent: #d87dff; --accent-rgb: 216, 125, 255; }
-.stats-section .stat-card:nth-child(5) { --accent: #ff6cae; --accent-rgb: 255, 108, 174; }
-
-/* Thin editorial separators instead of cards. */
-.stats-section .stat-card:not(:first-child)::before {
+/* Match the simple divider treatment used in the hero countdown. */
+.stats-section .stat-card + .stat-card::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 24px;
-  bottom: 24px;
+  top: 8%;
   width: 1px;
+  height: 80%;
   background: linear-gradient(
     180deg,
-    transparent 0%,
-    rgba(255,255,255,.07) 12%,
-    rgba(255,255,255,.14) 48%,
-    rgba(255,255,255,.07) 88%,
-    transparent 100%
+    transparent,
+    rgba(217,119,255,0.7) 24%,
+    rgba(255,255,255,0.3) 50%,
+    rgba(255,91,135,0.65) 76%,
+    transparent
   );
+  box-shadow: 0 0 8px rgba(213,92,227,0.18);
 }
 
-/* Very subtle dot texture beside the icon. */
-.stats-section .stat-card::after {
-  content: "";
-  position: absolute;
-  left: 94px;
-  top: 52px;
-  width: 92px;
-  height: 48px;
-  opacity: .26;
-  background-image: radial-gradient(circle, rgba(var(--accent-rgb), .52) 1.2px, transparent 1.4px);
-  background-size: 12px 12px;
-  -webkit-mask-image: linear-gradient(90deg, #000, transparent 88%);
-  mask-image: linear-gradient(90deg, #000, transparent 88%);
-  pointer-events: none;
-}
-
-/* Hide the old decorative glow layer from the original card markup. */
-.stats-section .stat-card > div:first-of-type {
+/* Remove every decorative element: icons, orbs, dots, arcs and visual scenes. */
+.stats-section .stat-card::after,
+.stats-section .stat-card > div {
   display: none !important;
+  content: none !important;
 }
 
-/* Icon orb with a restrained partial arc. */
-.stats-section .stat-card > div:nth-of-type(2) {
-  width: 74px !important;
-  height: 74px !important;
-  margin: 0 0 20px 0 !important;
-  border-radius: 50% !important;
-  border: 1px solid rgba(var(--accent-rgb), .30) !important;
-  background: radial-gradient(circle at 40% 35%, rgba(var(--accent-rgb), .14), rgba(8,11,26,.72) 70%) !important;
-  color: var(--accent) !important;
-  box-shadow: none !important;
-  position: relative !important;
-  z-index: 2 !important;
-}
-
-.stats-section .stat-card > div:nth-of-type(2)::after {
-  content: "";
-  position: absolute;
-  inset: -12px;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  border-left-color: var(--accent);
-  border-top-color: var(--accent);
-  opacity: .9;
-  transform: rotate(-34deg);
-  -webkit-mask-image: linear-gradient(135deg, #000 0 54%, transparent 72%);
-  mask-image: linear-gradient(135deg, #000 0 54%, transparent 72%);
-  pointer-events: none;
-}
-
-.stats-section .stat-card > div:nth-of-type(2) svg {
-  width: 31px !important;
-  height: 31px !important;
-}
-
-/* Handshake icon for Partners. */
-.stats-section .stat-card:nth-child(5) > div:nth-of-type(2)::before {
-  content: "";
-  width: 31px;
-  height: 31px;
-  display: block;
-  background: var(--accent);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' d='M8.5 12.5 11 15a2 2 0 0 0 2.8 0l4.7-4.7M3 8l4-3 4 2-3.5 3.5a2 2 0 0 0 2.8 2.8L13 11l5 4.5M3 8v7l4 4 2-2 2 2 2-2 2 1 5-5V8l-4-3-4 2-1.5-1.1'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' d='M8.5 12.5 11 15a2 2 0 0 0 2.8 0l4.7-4.7M3 8l4-3 4 2-3.5 3.5a2 2 0 0 0 2.8 2.8L13 11l5 4.5M3 8v7l4 4 2-2 2 2 2-2 2 1 5-5V8l-4-3-4 2-1.5-1.1'/%3E%3C/svg%3E") center / contain no-repeat;
-}
-
+/* Same typographic language as the countdown above; the countdown itself is untouched. */
 .stats-section .stat-card strong {
   display: block !important;
   margin: 0 !important;
-  font-size: clamp(36px, 3.15vw, 52px) !important;
-  line-height: .96 !important;
-  letter-spacing: -1.8px !important;
+  font-size: clamp(34px, 3.8vw, 52px) !important;
+  line-height: 0.95 !important;
+  font-weight: 900 !important;
+  letter-spacing: -2.4px !important;
   white-space: nowrap;
-  background: linear-gradient(135deg, #fff 0%, var(--accent) 88%) !important;
+  background: linear-gradient(135deg, #e6a2ff 0%, #d979ff 35%, #ff6db1 68%, #ff7282 100%) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   color: transparent !important;
+  filter:
+    drop-shadow(0 2px 4px rgba(0,0,0,0.42))
+    drop-shadow(0 0 11px rgba(211,99,255,0.12));
   text-shadow: none !important;
   position: relative !important;
-  z-index: 2 !important;
+  z-index: 1 !important;
 }
 
 .stats-section .stat-card span {
   display: block !important;
-  margin-top: 13px !important;
-  color: rgba(242,240,255,.76) !important;
-  font-size: 10px !important;
-  font-weight: 800 !important;
-  letter-spacing: 2.3px !important;
+  margin-top: 10px !important;
+  color: rgba(255,255,255,0.72) !important;
+  font-size: 7px !important;
+  font-weight: 900 !important;
+  letter-spacing: 2.2px !important;
   text-transform: uppercase !important;
   white-space: nowrap;
+  text-shadow: 0 2px 7px rgba(0,0,0,0.55);
   position: relative !important;
-  z-index: 2 !important;
+  z-index: 1 !important;
 }
 
 @media (max-width: 900px) {
   .stats-section .stats-grid {
-    grid-template-columns: repeat(5, minmax(205px, 1fr)) !important;
+    grid-template-columns: repeat(5, minmax(170px, 1fr)) !important;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scrollbar-width: none;
-    padding: 4px 0 12px;
+    padding-bottom: 8px;
   }
 
   .stats-section .stats-grid::-webkit-scrollbar {
@@ -158,18 +96,7 @@
   }
 
   .stats-section .stat-card {
-    min-height: 220px !important;
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-  }
-
-  .stats-section .stat-card > div:nth-of-type(2) {
-    width: 68px !important;
-    height: 68px !important;
-  }
-
-  .stats-section .stat-card::after {
-    left: 88px;
-    width: 72px;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 }
